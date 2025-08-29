@@ -5,6 +5,7 @@ int main()
   int cn;
   printf("Enter the number First Cn and Rn : ");
   scanf("%d%d", &cn, &rn);
+  if(rn%2 != 0)rn += 1;
   for (int i = 1; i <= rn/2; i++)
   {
     
