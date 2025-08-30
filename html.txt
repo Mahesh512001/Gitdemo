@@ -1,0 +1,54 @@
+what is tag
+tag is when any English word using in angular brackets then can say this is tag like <html>
+how many types of tags
+2 types of tag
+
+1.  paired tag
+2.  unpaired tag
+
+paired tag
+
+paired tag mean who is showing any data using two tags like <h2>data</h2> in this i am using 2 tags first start and second end here ends mean closer tag
+who have use closer tag without clouser tag we can't use this tag then we call paired tag
+
+how identify it's closer tag
+if any tag start with angular bracket after angular bracket using slash "/" without any space
+here
+</tag >
+NOTE:for (all tag)* you can not give any space in  like after angular bracket and slash tag name again slash   like (but here not allowed any space between
+ </name) </name  (here space allowed)>
+
+like < /name> this is not the way
+     	</name> this is good way. he give me expected output.
+ex; h1 to h6 div html body head etc
+
+unpaired tag
+unpaired tag is like who have not closer tag it's use own clouser tag like <br/> this is self clouser tag and we call as unpaired tag
+ex <br/> <img/> <input/> etc.
+
+in structure we defined three major section
+
+1.	versioning version defined 
+2.	header     header 
+3.	body
+versioning section like he tell me which version i am using at this time  if you write like
+!doctype html in angular bracket it's mean he is using latest version of this time
+<!DOCTYPE html>
+first version is html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!DOCTYPE HTML>
+
+in this link you identified clearly which version i'm using right now  if you want another  versing want use then change the number no after html and after no changes it's work like previous version
+
+header  
+
+meta 
+script
+style
+link
+title 
+base
+
+body

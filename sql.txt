@@ -1,0 +1,1236 @@
+SQL SERVER DEMO :-
+
+SQL  (structured query language)
+T-SQL  (transact-sql)
+
+what is db ?
+
+a  db is a organized collection of interrelated data . for example a bank db
+stores data related to customers,accounts,transactions and loans etc
+and a univ db stores data related to students,course,faculty etc.
+
+=> day-to-day operations on db includes 
+ 
+ C   create
+ R   read
+ U   update
+ D   delete
+
+what is dbms ?
+
+=>  DBMS stands for data base management system
+ => It is a software used to create,read,update,delete data in db.
+ => DBMS is an interface between user and database.
+
+              USER----------DBMS----------------DB
+
+ Evolution of DBMS :- 
+ ----------------------------
+
+	1960		  fms  (file mgmt system)
+
+	1970		  hdbms (hierarchical dbms)
+			  ndbms (network dbms)
+
+	1980		  rdbms  (relational dbms)
+
+	1990		  ordbms (object relational dbms)
+
+ RDBMS :- 
+ --------------
+
+ => Relational Database Management System
+ => RDBMS concepts are introduced by 	Edgar Frank Codd
+ => E.F.Codd introduced 12 rules called codd rules 
+ => a dbms software that supports all 12 rules is called perfect rdbms software
+ 
+ Information rule :- 
+ ------------------------
+
+ => according to information rule data must be organized in tables i.e. rows and columns
+
+Ex :-
+
+  CUSTOMER
+  cid	name	city     => columns / fields / attributes 
+  10	sachin	mum
+  11	rahul	del
+  12	vijay	hyd   => row / record / tuple
+
+   Database =   collection of tables
+   Table        =   collection of rows & cols
+   Row         =    collection of values
+   Column    =    collection of values of same field
+  
+ => every table must contain primary key to uniquely identify 
+    
+    ex  :-  accno,empid,aadharno,panno,voterid
+
+ => one table related to antoher table using foreign key.
+  
+Ex :- 
+
+ projects 
+ projid (pk)   name    duration    cost    client
+ 100             ABC     5 years      800    TATA MOTORS
+ 101             KLM      3 years      300    KLM Airlines 
+
+ emp
+ empid	ename	job	sal           projid (fk)
+ 1	A	SE	40k	100
+ 2	B	SSE	80k	101
+ 3	C	TL	100k	100
+ 4	D	PM	120k	101
+
+RDBMS features :- 
+------------------------
+ 
+1  easy to access and manipulate data 
+2  less redundency (duplication of data)
+3  more security 
+4  gurantees data quality 
+5  supports data sharing
+6  supports transactions 
+  
+RDBMS softwares :- 
+---------------------------
+
+ sql server	from microsoft
+ oracle		from oracle corp
+ mysql		from oracle corp
+ db2		from ibm
+ postgresql	from postgresql development
+ rds		from amazon
+
+lang		dbms
+    pop		      hdbms
+    oop		      rdbms
+        java		           sql server
+        c#.net	           oracle
+
+ORDBMS :- 
+----------------
+
+=> object relational dbms 
+=> it is the combination of rdbms & oops 
+
+        ordbms  =  rdbms + oops (reusability)
+
+=> rdbms doesn't support reusability but ordbms supports reusability
+ 
+ex :-
+
+ ADDRESS
+ hno	street	city	state	pin
+
+CUST
+cid	name	address
+
+EMP
+empid	ename	address
+
+ordbms softwares :- 
+-----------------------------
+
+ sql server
+ oracle
+ postgresql
+ 
+20-aug-25 
+
+DB Development Life Cycle :- 
+=======================
+
+Analysis
+Design
+Development
+Testing
+Deploy
+Maintain
+
+Design :- 
+-------------
+
+ =>  Designing db means designing tables
+ =>  DB is desinged by DB Designers / Architects 
+ =>  DB is designed by using 
+
+   1  ER Model  (Entity Relationship)
+   2  Normalization 
+ 
+Development :- 
+----------------------
+
+ => DB is developed by Developers & DBAs (DB Admin)  
+=>  DB is developed by using any rdbms tools like sql server
+
+                Developers		DBAs
+
+                creating tables		installation of sql server			
+                creating views		creating database
+                creating synonyms		creating logins
+                creating sequences		db backup & restore db
+                creating indexes		db export & import 
+                creating procedures	                performance tuning	
+                creating functions
+                creating triggers
+                writing queries
+
+Testing :- 
+-------------
+
+ => DB is tested by QA (Quality Assurance) team by using
+
+   1 Manual
+   2 Automation
+    
+Deployment :- 
+--------------------
+
+ => deployment means moving db from DEV server to PROD server
+ => after db is deployed then end user can use db for day-to-day operations
+ => DB can be deployed in 2 ways 
+
+ 1  on premises
+ 2  on cloud
+
+ => In  "  on premises "  db is deployed in the server managed by client 
+ => In  " on  cloud " db is deployed in the server managed by cloud service provider for ex microsoft,amazon etc
+ => cloud reduces intial investment for client.
+
+ summary :- 
+
+ what is db ?
+ what is dbms ?
+ what is rdbms ?
+ what is ordbms ?
+ what is db development life cycle ?
+ 
+==========================================================================
+
+SQL SERVER :-
+=============
+
+=>  sql server is a rdbms product from microsoft and also supports ordbms features 
+      and used to manage database.
+
+=>  using sql server users can create,read,update,delete data  in database.
+
+=> sql server used for DB Development & Administration
+
+versions of sql server :- 
+---------------------------------
+
+versions of sql server :- 
+ ------------------------------
+
+    version                               year
+
+  SQL SERVER 1.1               1991
+  SQL SERVER 4.2               1993
+  SQL SERVER 6.0               1995
+  SQL SERVER 6.5               1996
+  SQL SERVER 7.0               1998
+  SQL SERVER 2000             2000
+  SQL SERVER 2005             2005
+  SQL SERVER 2008             2008
+  SQL SERVER 2012             2012
+  SQL SERVER 2014             2014
+  SQL SERVER 2016             2016   
+  SQL SERVER 2017             2017
+  SQL SERVER 2019             2019
+  SQL SERVER 2022             2022
+
+ CLIENT / SERVER Architecture :- 
+ ---------------------------------------------
+
+ 1  server
+ 2  client
+
+ server :- 
+--------------
+
+  => server is a system where sql server is installed and running
+  => inside the sever sql server manages two memories 
+  
+   1    DB
+   2    INSTANCE
+
+ => DB is created in hard disk and acts as permanent storage.
+ => INSTANCE is created in ram and acts as temporary storage.
+ => data temporarly stored in instance and after saving then it is copied to db.
+
+client :- 
+----------
+
+  => client is also a system from where users can 
+
+ 1  connects to server
+ 2  submit requests to server
+ 3  receive response from server
+
+client tool :- 
+ -----------------
+
+  ssms   (sql server management studio)
+
+
+  user----------ssms--------------------------------------sql server-------------------db
+
+ SQL   :- 
+ ------------
+
+   => SQL stands for structured query language.
+
+   => a language used to communicate with sql server.
+
+   => user communicates with sql server by sending commands called queries.
+
+   => a query is a command / instruction  / question submitted to sql server to perform some operation over db.
+
+   => sql is originally developed by IBM and initially the name was "SEQUEL"
+        and later it is renamed to SQL.
+ 
+   => SQL is common to all relational db softwares 
+
+   USER------SSMS-----------------SQL-------------------------------SQL SERVER--------------DB
+
+  USER------SQLPLUS--------------SQL------------------------------ORACLE---------------------DB
+
+  USER------MYSQLWORKBENCH-----------SQL------------------MYSQL---------------------DB
+
+  USER-------PgAdmin--------------------------SQL--------------------POSTGRESQL-----------DB
+
+
+  => based on operations over db SQL is categorized into following sublanguages. 
+
+      DDL 		  (Data Definition Lang)
+      DML		  (Data Manipulation Lang)
+      DQL/DRL	  (Data Query Lang / Data Retrieval Lang)
+      TCL		  (Transaction Control Lang)
+      DCL                       (Data Control Lang)
+
+ 			 SQL
+
+	DDL	DML	 DRL	TCL		DCL
+
+	create	insert	select	commit		grant	
+	alter	update		rollback		revoke
+	drop	delete		save transaction
+	truncate   merge
+
+  DATA & DATA DEFINITION 
+
+  EMPID	NAME	SAL    => DATA DEFINITION  / METADATA 
+  100	SACHIN	6000   => DATA 
+
+22-aug-25 
+
+ Download & Install :- 
+ ----------------------------
+
+ 1  SQL SERVER
+ 2  SSMS
+
+ SQL SERVER :- 
+ ------------------------
+
+ download :- 
+ ---------------
+
+  https://www.microsoft.com/en-in/sql-server/sql-server-downloads
+
+  choose sql server developer edition
+
+  step-by-step installation :- 
+ ------------------------------------
+
+ https://www.mssqltips.com/sqlservertip/7313/install-sql-server-2022/
+
+  SSMS :- 
+ ------------
+
+ download :- 
+ ----------------
+
+ https://learn.microsoft.com/en-us/ssms/install/install
+
+How to connect to sql server :- 
+------------------------------------------
+
+ => open ssms and enter following details
+ 
+    SERVER  TYPE 		:-   DB Engine
+    SERVER NAME  		:-   DESKTOP-G2DM7GI
+    AUTHENTICATION 	:-   SQL SERVER Authentication
+    LOGIN			:-   SA  (system admin)
+    PASSWORD		:-   123
+
+  => click connect
+
+ How to create Database :- 
+-------------------------------------
+ 
+ => In object explorer  select   Databases => New Database 
+
+      Enter Database Name  :-  DB4PM 
+
+ => click OK 
+
+ => a db is created with following two files 
+
+   1  DATA FILE
+   2  LOG FILE 
+
+   Name	    	Type	Initial Size  	Autogrowth	Path
+   DB4PM     	DATA       8 MB		64 MB		C:\------
+   DB4PM_LOG	LOG        8 MB                          64 MB		c:\---
+
+  PATH :- 
+  ----------
+
+ C:\Program Files\
+       Microsoft SQL Server\
+       MSSQL15.MSSQLSERVER\
+        MSSQL\DATA\ DB4PM.MDF
+                                 DB4PM_LOG.LDF
+
+    MDF => master data file
+    LDF  => log data file
+
+ command to create new database :- 
+ -------------------------------------------------
+
+ => open Databases 
+                         System Databases
+                                                 master   => new query
+
+ syntax :-  CREATE DATABASE  <NAME>
+
+ Ex     :-    CREATE DATABASE  HR
+ 
+ SERVER
+      DATABASE
+                   TABLE
+                          DATA 
+
+ Datatypes in sql server :- 
+ ----------------------------------
+
+ => a datatype specifies 
+
+ 1  what type of the data allowed in a column
+ 2  how much memory allocated for column
+  
+   		                                                Datatypes 
+
+
+             CHAR	                   INTEGER	 FLOAT	         CURRENCY       DATE        BINARY
+
+ ascii	           unicode             tinyint  		decimal(p,s)      smallmoney        date          binary 
+			   smallint                  numeric(p,s)      money                time          varbinary
+ char	            nchar	   int                                                                               datetime   varbinary(max)
+ varchar	            nvarchar	   bigint
+ varchar(max)       nvarchar(max) numeric(p)
+ 
+
+  char(size) :- 
+ ------------------
+
+  => allows character data upto 8000 chars
+  => recommended for fixed length char fields 
+
+       ex :-     NAME    CHAR(10)
+
+                   SACHIN - - - -              10 bytes 
+                                    wasted 
+
+                   RAVI- - - - - -                 10 bytes
+                                   wasted
+
+  => In char datatype extra bytes are wasted , so char is not recommended for
+       variable length fields and char is recommended for fixed length fields 
+
+          ex :-     GENDER    CHAR(1)
+
+	      M
+	      F
+
+                      STATE_CODE	CHAR(2)
+
+	      AP
+	      TG
+	      MH
+ 
+                      COUNTRY_CODE    CHAR(3)
+
+	      IND
+	      USA
+
+ VARCHAR(size) :- 
+  ------------------------
+
+  => allows character data upto 8000 chars 
+  => varchar is recommended for varialbe length fields
+
+  ex :-      NAME	VARCHAR(10)
+
+               SACHIN - - - - 
+                                 released 
+
+               RAVI - - - - - -
+                                released 
+ 
+ VARCHAR(max) :- 
+ --------------------------
+
+  => allows character data upto 2GB.
+
+   Ex :-    review     varchar(max) 
+
+ NOTE :- 
+
+  => char/varchar/varchar(max)  allows ascii chars (256 chars) that includes
+       a-z,A-Z,0-9,special chars i.e. allows alphanumeric data.
+
+      ex :-             panno     char(10)
+                          vehno     varchar(10)
+                          emailid    varchar(20)
+
+  NCHAR/NVARCHAR/NVARCHAR(max) :-    ( N => National)
+  --------------------------------------------------------
+
+  => allows unicode chars (65536) that includes all ascii chars and chars
+       belongs to different languages.
+
+  => ascii char occupies 1 byte and unicode char occupies 2 bytes       
+ 
+ INTEGER types :- 
+ ------------------------
+
+ => allows numbers without decimal (integers)
+
+        Types	  bytes		range
+ 
+        tinyint	  1		 0 to 255	
+        smallint	  2	                 -2^15 (-32768) to 2^15-1 (32767)			
+        int		  4		-2^31  to  2^31-1
+        bigint	  8 		-2^63  to  2^63-1
+
+     ex  :-     AGE    	  TINYINT
+                  EMPID  	  SMALLINT
+              
+ NUMERIC(p) :- 
+ --------------------
+
+  => allows numbers without decimal upto 38 digits 
+
+     ex  :-    empid    NUMERIC(4)
+
+                  10
+                  100
+                  1000
+                  10000   => not allowed 
+
+                   aadharno     NUMERIC(12)
+                   accno           NUMERIC(16)
+                   phone           NUMERIC(10)
+ 
+DECIMAL(p,s) / NUMERIC(p,s)  :- 
+--------------------------------------------
+
+  =>  allows numbers with decimal (float)
+  
+  p  => precision  => total no of digits allowed 
+  s  => scale        => no of digits allowed after decimal 
+
+    ex  :-      SALARY    DECIMAL(7,2)
+
+                   5000
+                   5000.56
+                   50000.56
+                   500000.56  => not allowed 
+
+                   5000.5689  => allowed =>  5000.57
+                   5000.5638  => allowed =>  5000.56
+ 
+                   SAVG         DECIMAL(5,2)
+
+  CURRENCY types :- 
+  --------------------------
+ 
+  => currency types are used for fields related to money
+
+          Types		bytes		range
+
+          SMALLMONEY	4 bytes		-2,14,748.3648  to  2,14,748.3647
+          MONEY		8 bytes                  	-922,337,203,685,477.5808 to 922,337,203,685,477.5807        
+
+            Ex  :-     SALARY   	SMALLMONEY
+                         BALANCE	MONEY
+	        
+25-aug-25
+
+   DATE & TIME  :- 
+   -----------------------
+
+   DATE			=>    allows only date
+   TIME			=>    allows only time
+   DATETIME		=>    allows both date & time 
+
+ => default date format in sql server is yyyy-mm-dd
+ => default time format is hh:mm:ss
+
+      ex  :-     DOB	  DATE
+	  
+ 	 2001-04-20
+                 2025-08-25
+	 
+	 LOGIN	   TIME
+
+	 9:00:00
+
+	TXNDT	    DATETIME
+
+	 2025-08-25 10:00:00	    
+
+ Binary Types :- 
+ -------------------
+
+  => binary types allows multimedia objects like audio,video,images 
+ 
+ BINARY		=> allows binary data upto 8000 bytes
+ VARBINARY	=> allows binary data upto 8000 bytes
+ VARBINARY(MAX)  => allows binary data upto 2GB
+
+  ex  :-     photo   varbinary(8000)
+               movie   varbinary(max)
+               
+  Creating tables in sql server :- 
+  -----------------------------------------
+
+  CREATE TABLE <tabname>
+  (
+     colname  datatype(size) ,
+     colname  datatype(size),
+     colname  datatype(size),
+     -------------------------------
+  )
+
+  Rules :- 
+  -----------
+
+ 1   name should start with alphabet
+ 2   name should not contain spaces & special chars but allows  _    $    #
+ 3   name can be upto 128 chars
+ 4   table can have 1024 columns
+ 5   no of rows unlimited 
+
+  ex :-    123emp		invalid
+              emp 123		invalid
+              emp*123		invalid
+              emp_123		valid
+              [123]		valid			 
+
+Ex :- 
+
+  => create table with following structure ? 
+
+  EMP
+  empid	ename	job	sal	hiredate	  dept
+
+  CREATE TABLE emp
+  (
+      empid     TINYINT,
+      ename    VARCHAR(10),
+      job          VARCHAR(10),
+      sal          SMALLMONEY,
+      hiredate  DATE,
+      dept        VARCHAR(10)
+   )  
+
+  user-----ssms-------------create table----------------------sql server--------------db4pm
+
+ => above command created table structure / definition that includes columns,datatype and size
+
+  SP_HELP     :-       (sp  => stored procedure)
+ ----------------------
+
+ => command to see the structure of the table
+
+                  SP_HELP   <tabname>
+
+    Ex :-       SP_HELP  emp 
+
+	empid	tinyint		no	1
+	ename	varchar		no	10
+	job	varchar		no	10
+	sal	smallmoney	no	4
+	hiredate	date		no	3
+	dept	varchar		no	10
+
+ Inserting data into table :- 
+ -----------------------------------
+
+ => "insert" command is used to insert data into table
+ =>  insert command creates a new row
+ =>  we can insert 
+
+   1 single row
+   2 multiple rows 
+
+ inserting single row :- 
+ -----------------------------
+
+    INSERT INTO <tabname> VALUES(v1,v2,v3,-------------)
+
+ Ex :- 
+ 
+   INSERT INTO emp VALUES(100,'sachin','clerk',4000,'2025-08-25','hr')
+   INSERT INTO emp VALUES(101,'arvind','manager',9000,getdate(),'sales')
+
+          getdate()  =>  it is a function that returns current date
+
+inserting multiple rows :- 
+---------------------------------
+
+  INSERT INTO emp VALUES(102,'rahul','analyst',8000,'2020-04-20','it') , 
+                                                (103,'vijay','clerk',6000,'2018-10-15','sales')
+
+
+  Inserting nulls :- 
+  -----------------------
+
+   => a  null means blank or empty
+   => it is not equal to 0 or space
+   => nulls can be inserted in two ways 
+
+   method 1 :- 
+   ----------------
+
+   INSERT INTO emp VALUES(104,'david',NULL,NULL,'2019-03-10','hr')
+
+  method 2 :- 
+  -----------------
+
+    INSERT INTO emp  VALUES(105,'ajay','2021-09-18','hr')   => ERROR
+
+    INSERT INTO emp (empid,ename,hiredate,dept) VALUES(105,'ajay','2021-09-18','hr') => 1 ROW CREATED 
+
+    remaining two fields job,sal are filled with nulls.
+
+   26-AUG-25
+
+  Operators in SQL SERVER :-  
+  ----------------------------------------
+
+ Arithmetic Operators	=>	+    -      *       /     %  
+ Relational Operators	=>  	>   >=    <    <=    =     <>    !=
+ Logical Operators		=>	AND   OR   NOT 
+ Special Operators		=>	BETWEEN
+				IN
+				LIKE
+				IS
+				ANY
+				ALL
+				EXISTS
+				PIVOT
+Set Operators		=>	UNION
+				UNION ALL
+				INTERSECT
+				EXCEPT
+
+Displaying Data :- 
+------------------------
+
+ =>  "SELECT" command is used to display data from table
+ =>  we can display all rows & all columns 
+ =>  we can display specific rows and specific columns
+ 
+                SELECT columns / *   FROM  tabname 
+
+          SQL	=	ENGLISH	
+          QUERIES	=	SENTENCES
+          CLAUSES	=              WORDS
+
+           FROM clause  => specify which table data you want to see
+           SELECT clause => specify which columns you want to see
+
+ Ex :- 
+
+   => display employee names and salaries ? 
+
+         SELECT  ename,sal  FROM emp 
+
+  => display names,jobs and hiredates ?
+
+       SELECT  ename,job,hiredate FROM emp
+
+ => display all data from emp table ? 
+
+      SELECT  * FROM emp 
+
+        *   => all columns 
+
+WHERE clause :- 
+-------------------------
+
+ => where clause is used to fetch specific row/rows from table based on a condition
+
+ syntax :-
+
+      SELECT columns / *
+      FROM tabname
+      [WHERE condition] 
+
+ condition :- 
+ -----------------
+
+                COLNAME   OP    VALUE 
+
+  =>   a condition is always a relational expression
+  =>   op must be any relational operator like   =    >    >=    <     <=      <>
+  =>   condition returns TRUE / FALSE
+  =>   if cond = true row is selected , if cond = false row is not selected 
+
+ Ex :- 
+
+   => display employee details whose id = 103  ?
+
+        SELECT  * 
+        FROM emp
+        WHERE  empid = 103 
+
+  => display employee details whose name = rahul ? 
+
+      SELECT *
+      FROM emp 
+      WHERE ename='rahul' 
+
+ => display employee details who are earning more than 5000 ?
+
+      SELECT *
+      FROM emp 
+      WHERE sal > 5000 
+
+ => display employee details who are joined after 2020  ?
+
+      SELECT *
+      FROM emp 
+      WHERE hiredate > 2020   => ERROR
+
+      SELECT *
+      FROM emp 
+      WHERE hiredate > '2020-12-31'
+
+ => display employees joined before 2020  ? 
+
+      SELECT *
+      FROM emp 
+      WHERE hiredate <  '2020-01-01' 
+
+ => employees not working as clerk ?
+
+      SELECT *
+      FROM emp 
+      WHERE job <> 'clerk' 
+
+compound condition :- 
+-----------------------------
+
+ => multiple conditions combined with  AND / OR  operators is called compound condition
+
+             WHERE  cond1   AND    cond2 	   result
+	             T		   T	   T
+	             T		   F	   F
+	             F		   T	   F
+	             F		   F	   F
+
+            WHERE   cond1   OR    cond2         result
+	             T		  T	     T
+	             T		  F	     T
+	             F		  T	     T
+	             F		  F	     F
+
+   =>  employees working as clerk,manager ?
+
+        SELECT *
+        FROM emp 
+        WHERE  job='clerk'  OR  job='manager'
+
+  => employees whose id = 100,103,105 ? 
+
+      SELECT *
+      FROM emp 
+      WHERE empid = 100,103,105   => ERROR  =>  
+
+      SELECT *
+      FROM emp 
+     WHERE empid=100  OR  empid=103  OR  empid=105 
+
+  => employees earning more than 5000 and less than 9000  ? 
+
+      SELECT *
+      FROM emp 
+      WHERE sal > 5000   AND    sal < 9000
+
+  => employees working as clerk and earning more than 5000 ? 
+
+      SELECT *
+      FROM emp 
+      WHERE job='clerk'  AND  sal > 5000
+
+ => employees joined in 2020  ? 
+
+    SELECT *
+    FROM emp 
+    WHERE hiredate >= '2020-01-01'
+                   AND
+                  hiredate <= '2020-12-31' 
+
+28-jun-25
+
+ => employees working as clerk,manager and earning more than 5000 ? 
+
+    SELECT *
+    FROM emp 
+    WHERE job='clerk'  OR  job='manager'  AND  sal>5000
+             
+   above query returns clerks earning less than 5000 because sal>5000 is applied only to        
+   manager but not to clerk because operator AND has got more priority than operator OR ,
+   to overcome this use (  ).
+
+
+    SELECT *
+    FROM emp 
+    WHERE ( job='clerk'  OR  job='manager' )  AND  sal>5000
+  
+=> 
+
+  STUDENT
+  sno	sname	s1	s2	s3
+ 1	A	80	90	70
+ 2	B	60	40	30
+ 3	C	70	20	30
+ 4	D	30	10	20
+
+CREATE TABLE student
+(
+ sno int,sname varchar(10),s1 tinyint,s2 tinyint,s3 tinyint
+ )
+
+ insert into student  values(1,'A',80,90,70),
+                                          (2,'B',60,40,30),
+                                          (3,'C',70,20,30),
+                                          (4,'D',30,10,20)
+
+list of students who are passed  ? 
+
+ SELECT * 
+ FROM student
+ WHERE s1>=35  AND  s2>=35  AND  s3>=35
+
+list of students who are failed ? 
+
+ SELECT *
+ FROM student
+ WHERE s1<35 OR  s2<35  OR  s3<35 
+
+=> list of students who are failed in exactly one subject ?
+
+   SELECT *
+   FROM student
+   WHERE  (s1<35  AND  s2>=35 AND s3>=35)
+                  OR
+                  (s1>=35 AND s2<35 AND s3>=35)
+                   OR
+                  (s1>=35 AND s2>=35 AND s3<35)
+
+=> list of students who are failed in exactly 2 subjects ?
+
+=> list of students who are failed in all 3 subjects ? 
+
+IN operator :- 
+-------------------
+
+=> use IN operator for list comparison  
+=> use IN operator for "=" comparison with multiple values 
+
+        WHERE  colname =  v1,v2,v3,-----     =>  INVALID
+
+        WHERE  colname IN (v1,v2,v3,--)     =>   VALID
+    
+  where col = v1
+             OR
+             col = v2      ================>    where col  IN (v1,v2,v3)
+             OR
+             col = v3
+
+Ex :- 
+
+ => employees whose id = 100,103,105 ? 
+
+      SELECT *
+      FROM emp 
+      WHERE empid IN (100,103,105)
+
+ => employees working as clerk,manager ? 
+
+      SELECT *
+      FROM emp 
+      WHERE  job IN ('clerk','manager')   =>  where job='clerk' or job='manager' 
+   
+ => employees not working as clerk,manager ?
+
+      SELECT *
+      FROM emp 
+      WHERE  job NOT IN ('clerk','manager')  
+
+=> employees working as clerk,manager and not working for dept hr,sales ?
+
+     SELECT *
+     FROM emp
+     WHERE job IN ('clerk','manager')
+                    AND
+                    dept NOT IN ('hr','sales')
+   
+BETWEEN operator :- 
+---------------------------------
+
+ =>  use between operator for range comparison 
+  
+       range :-  5000 to 10000
+                     2020 to 2025 
+                     
+           WHERE  colname BETWEEN  V1 AND V2       
+
+  WHERE col >= v1       =================>   WHERE col  BETWEEN  v1 AND v2 
+                 AND
+                 col <= v2
+
+=> list of employees earning between 5000 and 10000 ?  
+ 
+    SELECT *
+    FROM emp 
+    WHERE sal BETWEEN 5000 AND 10000
+
+ => employees joined in 2020  ? 
+
+      SELECT *
+      FROM emp 
+      WHERE hiredate BETWEEN '2020-01-01' AND '2020-12-31' 
+
+=> not joined in 2020  ? 
+ 
+     SELECT *
+     FROM emp 
+     WHERE hiredate NOT BETWEEN '2020-01-01' AND '2020-12-31' 
+
+ note :- 
+ 
+ => use between operator with lower and upper but not with upper and lower
+
+     WHERE sal BETWEEN 10000 AND 5000    => no rows 
+
+29-aug-25 
+
+ => display employees working as clerk,manager 
+     and earning between 5000 and 10000
+     and not joined in 2020 and not working for dept hr,it ? 
+
+    SELECT *
+    FROM emp 
+    WHERE  job IN ('clerk','manager')
+                   AND
+                   sal BETWEEN 5000 AND 10000
+                   AND
+                   hiredate NOT BETWEEN '2020-01-01' AND '2020-12-31'
+                   AND
+                   dept NOT IN  ('hr','it')
+
+=> list of samsung,realme,oneplus mobile phones price between 10000 and 20000 ?
+
+ products
+ prodid	pname	price	category	brand
+ 
+ SELECT *
+ FROM products 
+ WHERE category='mobiles'
+                AND
+                brand IN ('samsung','relame','oneplus')
+                AND
+                price BETWEEN 10000 AND 20000
+
+ => list of male customers age between 20 and 40 and staying in hyd,mum,del ?
+
+  customer
+  cid	name	age	gender	city	state	
+
+   SELECT *
+   FROM customer
+   WHERE gender='m'
+                  AND
+                  age BETWEEN 20 AND 40
+                  AND
+                  city IN ('hyd','mum','del')
+ 
+LIKE operator :- 
+------------------------
+
+ => use LIKE operator for pattern comparison
+
+      ex :-   name starts with 'a'
+                emailid ends with .in
+                
+                WHERE  colname  LIKE  'pattern'
+
+  => pattern is also a string made up of alphabets,digits,special chars and wildcard chars
+
+ wildcard chars :- 
+ ------------------------
+
+ 	%	0  or many chars
+
+	_       	exactly 1 char
+
+     Ex :- 
+
+   => employees name starts with 's' ? 
+
+       SELECT *
+       FROM emp 
+       WHERE ename LIKE  's%' 
+
+ => employees  name ends with 'd' ? 
+
+    SELECT *
+    FROM emp 
+    WHERE ename LIKE '%d'
+
+ => employees  name contains 'a'  ? 
+
+     SELECT *
+    FROM emp 
+    WHERE ename LIKE '%a%'
+
+ => employees where 'a' is the 2nd char in their name ? 
+
+    SELECT *
+    FROM emp 
+    WHERE ename LIKE  '_a%'
+
+=> employees where 'a' is the 4th char from last ? 
+
+    SELECT *
+    FROM emp 
+    WHERE ename LIKE  '%a___'
+
+=> name contains 2 'a' s ? 
+
+    SELECT *
+    FROM emp 
+    WHERE ename LIKE  '%a%a%'
+
+=> name contains 4 chars ? 
+ 
+    SELECT *
+    FROM emp 
+    WHERE ename LIKE '____'
+
+ => name contains min 5 chars ? 
+
+    SELECT *
+    FROM emp 
+    WHERE ename LIKE '_____%' 
+
+=> name starts with vowel ? 
+
+  SELECT *
+  FROM emp 
+  WHERE ename LIKE 'a%'
+                 OR
+                ename LIKE 'e%'
+                OR
+               ename LIKE 'i%'
+                OR
+              ename LIKE 'o%'
+                 OR
+               ename LIKE 'u%'
+
+               [ ]    =>  to specify group of chars 
+
+ SELECT *
+ FROM emp 
+ WHERE ename LIKE '[aeiou]%' 
+
+=> employees name starting with consonant ?
+ 
+ SELECT *
+ FROM emp 
+ WHERE ename NOT LIKE '[aeiou]%' 
+
+=> name starts between 'a' and 'p' ? 
+
+ SELECT *
+ FROM emp 
+ WHERE ename LIKE '[a-p]%' 
+
+=> employees joined in oct month ?      yyyy-mm-dd
+
+  SELECT *
+  FROM emp 
+  WHERE hiredate LIKE '_____10___'
+
+  WHERE hiredate  LIKE  '%-10-%'  
+
+  WHERE hiredate LIKE '%10%'    =>   incorrect output 
+
+=> employees joined in 2020 year ? 
+
+    WHERE hiredate BETWEEN  '2020-01-01' AND '2020-12-31' 
+    
+    SELECT *
+    FROM emp 
+    WHERE hiredate LIKE  '2020%' 
+    
+ => 
+
+  CUST
+  cid	cname
+  10	sachin_tendulkar
+  11	virat%kohli
+  12	mahendra_singh_dhoni
+
+  list of customers name contains " _ "   ?
+
+  SELECT *
+  FROM cust
+  WHERE cname LIKE '%_%'  
+
+  above query returns all customer records because "_" is treated as wildcard
+  char but not treated as search char , to overcome this use  "\" 
+
+    SELECT *
+    FROM cust
+    WHERE cname LIKE  '%\_%'   ESCAPE  '\' 
+
+ =>  list of customers name contains "%"  ?
+
+    SELECT *
+    FROM cust
+    WHERE cname LIKE '%\%%'  ESCAPE '\'
+   
+ => list of customers name contains 2 "_"  ? 
+
+   SELECT *
+   FROM cust
+   WHERE cname LIKE '%\_%\_%'   ESCAPE '\' 
+
+   the char that immediately follows "\" is not treated as wildcard char and it is 
+   treated as search char.
+ 
+ 
+
+
+
+
