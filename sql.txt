@@ -1229,8 +1229,326 @@ LIKE operator :-
    the char that immediately follows "\" is not treated as wildcard char and it is 
    treated as search char.
  
+30-aug-25 
+
+IS operator :-
+--------------------
+
+ => use IS operator for NULL comparison
+
+       WHERE  colname IS NULL
+       WHERE  colname IS NOT NULL
+
+ => employees not earning salary ? 
+ 
+      SELECT * FROM emp WHERE sal = NULL    => NO ROWS 
+
+      SELECT * FROM emp WHERE sal  IS NULL 
+
+ => employees earning salary ? 
+
+        SELECT * FROM emp WHERE sal  IS NOT NULL 
+
+ => 
+
+  STUDENT
+  sno	sname	s1	s2	s3
+  1	A	80	90	70
+  2	B	NULL        60            50
+  3	C	50	NULL	NULL
+  4	D	NULL	NULL	NULL
  
 
+ 1 display list of students who are absent for one subject ?
+ 2 display list of students who are absent for two subjects ?
+ 3 display list of students who are absent for 3 subjects ?
 
+1
 
+ SELECT *
+ FROM student 
+ WHERE  s1 IS NULL  AND  s2 IS NOT NULL  AND  s3 IS NOT NULL
+                OR
+                s1 IS NOT NULL AND s2 IS NULL AND s3 IS NOT NULL
+                OR
+                s1 IS NOT NULL AND S2 IS NOT NULL AND s3 IS NULL
 
+ summary :- 
+ 
+ WHERE colname IN (v1,v2,v3,--)
+ WHERE colname BETWEEN v1 AND v2 
+ WHERE colname LIKE 'pattern'
+ WHERE colname IS NULL 
+
+ Question :- 
+ 
+ SELECT *
+ FROM emp 
+ WHERE job IN ('clerk','man%') 
+
+A  ERROR
+B  returns clerk,manager records
+C  returns only clerk
+D  none
+
+ ANS :- c 
+
+WHERE job='clerk'  OR  job LIKE 'man%' 
+
+ ANS :- B
+
+ALIAS :-
+------------
+
+ => alias means another name  to column / expression
+ => aliases are to change column heading
+
+           COLNAME / EXPR  [AS]  ALIAS 
+
+ Ex  :- 
+
+  => display  ENAME   ANNUAL SALARY  ?
+
+       SELECT  ename,sal*12  as annsal
+       FROM emp
+       
+     SELECT  ename,sal*12 as [annual salary]  
+     FROM emp
+  
+  => display   ENAME  SAL   HRA    DA     TAX    TOTSAL   ? 
+
+            HRA = house rent allowance = 20% on sal 
+            DA = dearness allowance = 30% on sal
+            TAX =  10% on sal
+            TOTSAL = SAL + HRA + DA - TAX 
+
+           SELECT  ename,sal,
+                           sal*0.2 as hra,
+                           sal*0.3 as da,
+                           sal*0.1 as tax,
+                           sal + (sal*0.2) + (sal*0.3) - (sal*0.1) as totsal
+           FROM emp 
+ 
+           SMITH	800	160	240	80	1120
+
+ => display  SNO 	TOTAL	AVG   ? 
+
+  STUDENT
+  sno	sname	s1	s2	s3
+ 1	A	80	90	70
+ 2	B	60	40	30
+
+SELECT   sno ,
+                 s1+s2+s3 as total ,
+                 (s1+s2+s3)/3.0 as avg
+FROM student
+
+ ORDER BY clause :- 
+ --------------------------------
+
+  => order by clause is used to sort table data 
+  => we can sort table data based on one or more columns
+  => we can sort data either in ascending or in descending order
+  => default order is ascending
+
+   SELECT  columns
+   FROM tabname
+   [WHERE cond]
+   ORDER BY   colname  ASC / DESC  , ------------
+  
+  ASC			DESC
+
+  0-9			9-0
+  A-Z			Z-A
+  earliest - latest		latest - earliest
+
+Ex :- 
+
+ => arrange employee list  name wise ascending order ?
+
+     SELECT  *
+     FROM emp 
+     ORDER BY  ename  ASC 
+
+  => arrange employee list sal wise desc order ? 
+
+      SELECT * 
+      FROM emp 
+      ORDER BY sal DESC 
+
+ => arrange employee list based on their join date and employee who joined first display first ? 
+
+   SELECT *
+   FROM emp 
+   ORDER BY  hiredate  ASC 
+
+ => statement between 1st aug  to 30 aug of particular customer
+      and latest transaction should be displayed first ? 
+
+  TRANSACTIONS 
+   trid	ttype	tdate	tamt	accno
+   1	W	?	2000	100
+
+   SELECT *
+   FROM transactions 
+   WHERE accno = 100
+                  AND
+                  tdate BETWEEN '2025-08-01'  AND  '2025-08-30'
+   ORDER BY  tdate DESC 
+
+   NOTE :- 
+
+   => In order by clause we can use column names or column numbers 
+   
+     SELECT  *
+     FROM emp
+     ORDER BY  6 DESC 
+ 
+      above query sorts data based on 6th column in emp table i.e. sal 
+
+     SELECT empno,ename,sal,deptno 
+     FROM emp 
+     ORDER BY 6 DESC  => ERROR  =>  6 is out of range
+ 
+     ORDER BY number should not be based on table , it should be based on select list 
+ 
+      SELECT  empno,ename,sal,deptno
+      FROM emp 
+      ORDER BY 3 DESC  => sorts data based on 3rd column in select list i.e. sal 
+
+ sorting based on multiple fields :- 
+ ----------------------------------------------
+
+ => arrange employee list  dept wise asc and with in dept sal wise desc  ?
+
+     SELECT empno,ename,sal,deptno 
+     FROM emp 
+     ORDER BY deptno ASC,sal DESC 
+
+      1  A   3000   20			  6  F   4000   10			
+      2  B   4000  30			  3  C   2000   10		
+      3  C   2000  10  =============>        5  E   6000   20        
+      4  D   5000  30			  1  A   3000    20
+      5  E   6000  20		                   4  D   5000   30		  
+      6  F   4000  10			  2  B   4000    30	
+  
+ => arrange student list based on avg desc , m desc,p desc ? 
+
+create table student
+(
+ sno int,sname varchar(10),m int,p int,c int
+ )
+
+ insert into student values(1,'A',80,90,70),
+                                          (2,'B',60,70,50),
+                                          (3,'C',90,70,80),
+                                          (4,'D',90,80,70)
+   STUDENT
+   sno	sname	m	p	c
+  1	A	80	90	70
+  2	B	60	70	50
+  3	C	90	70	80
+  4	D	90	80	70
+
+ SELECT  * , (m+p+c)/3 as avg 
+ FROM student
+ ORDER BY (m+p+c)/3  DESC , M DESC , P DESC
+
+ 
+  4	D	90	80	70
+  3	C	90	70	80
+  1	A	80	90	70
+  2	B	60	70	50
+
+DISTINCT clause :- 
+--------------------------
+
+ => DISTINCT clause eliminates duplicates  from select output 
+
+       SELECT  DISTINCT  col1,col2,col3,--------
+       FROM tabname
+       [WHERE cond]
+       [ORDER BY ----]
+
+Ex :- 
+
+1    SELECT DISTINCT job  FROM emp 
+  
+	ANALYST
+	CLERK
+	MANAGER
+	PRESIDENT
+	SALESMAN
+   
+ 2     SELECT DISTINCT deptno  FROM emp 
+
+	10		
+	20
+	30 
+
+TOP clause :- 
+--------------------
+
+  => TOP clause is used to select top n rows from table
+
+       SELECT   TOP <n>   columns
+       FROM tabname
+       [WHERE --]
+       [ORDER BY ----]
+
+Ex :- 
+
+ => display  first 5 rows from emp table ? 
+
+      SELECT  TOP 5  *  FROM emp 
+
+ => display top 5 employees based on sal  ?
+
+      SELECT TOP 5 *
+      FROM emp
+      ORDER BY sal DESC
+ 
+Execution :- 
+
+ FROM
+ WHERE
+ SELECT
+ ORDER BY 
+ TOP
+
+ => display top 5 employees based on experience ?
+
+      SELECT TOP 5 *
+      FROM emp
+      ORDER BY hiredate ASC
+
+ => display top 3 max salaries ? 
+
+ SELECT DISTINCT  TOP 3  sal
+ FROM emp
+ ORDER BY sal DESC-
+
+=> display top 3 employees based on sal in 30th dept ?
+
+  SELECT TOP 3  *
+  FROM emp 
+  WHERE deptno = 30
+  ORDER BY sal DESC 
+
+summary :- 
+
+ WHERE		=>   To select specific rows
+ ORDER BY	=>   To sort table data
+ DISTINCT	=>   To eliminate duplicates
+ TOP 		=>   To select top n rows 
+
+ DML commands :-  (Data Manipulation Lang)
+ --------------------------
+ 
+  INSERT
+  UPDATE
+  DELETE
+  MERGE 
+
+ => all DML commands acts on table data.
+ => all DML commands are auto saved ( auto committed)
