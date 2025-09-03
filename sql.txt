@@ -52,15 +52,15 @@ what is dbms ?
 Ex :-
 
   CUSTOMER
-  cid	name	city     => columns / fields / attributes 
-  10	sachin	mum
-  11	rahul	del
-  12	vijay	hyd   => row / record / tuple
+  cid	name	     city     => columns / fields / attributes 
+  10	     sachin	mum
+  11	     rahul	del
+  12	     vijay	hyd   => row / record / tuple
 
-   Database =   collection of tables
-   Table        =   collection of rows & cols
-   Row         =    collection of values
-   Column    =    collection of values of same field
+   Database         =   collection of tables
+   Table            =   collection of rows & cols
+   Row              =    collection of values(data)
+   Column           =    collection of values of same field
   
  => every table must contain primary key to uniquely identify 
     
@@ -71,16 +71,17 @@ Ex :-
 Ex :- 
 
  projects 
- projid (pk)   name    duration    cost    client
- 100             ABC     5 years      800    TATA MOTORS
+ projid (pk)     name     duration     cost    client
+ 100             ABC      5 years      800    TATA MOTORS
  101             KLM      3 years      300    KLM Airlines 
 
+
  emp
- empid	ename	job	sal           projid (fk)
- 1	A	SE	40k	100
- 2	B	SSE	80k	101
- 3	C	TL	100k	100
- 4	D	PM	120k	101
+ empid	ename	job	     sal       projid (fk)
+ 1       	A	     SE	     40k	     100
+ 2	     B	     SSE	     80k	     101
+ 3	     C	     TL	     100k	     100
+ 4	     D	     PM	     120k	     101
 
 RDBMS features :- 
 ------------------------
@@ -98,15 +99,15 @@ RDBMS softwares :-
  sql server	from microsoft
  oracle		from oracle corp
  mysql		from oracle corp
- db2		from ibm
+ db2		      from ibm
  postgresql	from postgresql development
- rds		from amazon
+ rds		     from amazon
 
-lang		dbms
-    pop		      hdbms
-    oop		      rdbms
-        java		           sql server
-        c#.net	           oracle
+lang		      dbms
+pop		      hdbms
+oop		      rdbms
+java		      sql server
+c#.net	      oracle
 
 ORDBMS :- 
 ----------------
@@ -164,14 +165,14 @@ Development :-
  => DB is developed by Developers & DBAs (DB Admin)  
 =>  DB is developed by using any rdbms tools like sql server
 
-                Developers		DBAs
+                Developers		          DBAs
 
-                creating tables		installation of sql server			
-                creating views		creating database
-                creating synonyms		creating logins
-                creating sequences		db backup & restore db
-                creating indexes		db export & import 
-                creating procedures	                performance tuning	
+                creating tables		     installation of sql server			
+                creating views		     creating database
+                creating synonyms		     creating logins
+                creating sequences		     db backup & restore db
+                creating indexes		     db export & import 
+                creating procedures	     performance tuning	
                 creating functions
                 creating triggers
                 writing queries
@@ -226,11 +227,11 @@ versions of sql server :-
 
     version                               year
 
-  SQL SERVER 1.1               1991
-  SQL SERVER 4.2               1993
-  SQL SERVER 6.0               1995
-  SQL SERVER 6.5               1996
-  SQL SERVER 7.0               1998
+  SQL SERVER 1.1              1991
+  SQL SERVER 4.2              1993
+  SQL SERVER 6.0              1995
+  SQL SERVER 6.5              1996
+  SQL SERVER 7.0              1998
   SQL SERVER 2000             2000
   SQL SERVER 2005             2005
   SQL SERVER 2008             2008
@@ -275,7 +276,7 @@ client tool :-
   ssms   (sql server management studio)
 
 
-  user----------ssms--------------------------------------sql server-------------------db
+  user----------ssms--------------------------sqlserver-------------------db
 
  SQL   :- 
  ------------
@@ -293,13 +294,13 @@ client tool :-
  
    => SQL is common to all relational db softwares 
 
-   USER------SSMS-----------------SQL-------------------------------SQL SERVER--------------DB
+   USER------SSMS-----------------SQL--------------------SQLSERVER--------------DB
 
-  USER------SQLPLUS--------------SQL------------------------------ORACLE---------------------DB
+  USER------SQLPLUS--------------SQL---------------------ORACLE-----------------DB
 
-  USER------MYSQLWORKBENCH-----------SQL------------------MYSQL---------------------DB
+  USER------MYSQLWORKBENCH-----------SQL------------------MYSQL-----------------DB
 
-  USER-------PgAdmin--------------------------SQL--------------------POSTGRESQL-----------DB
+  USER-------PgAdmin---------------------SQL----------------POSTGRESQL-----------DB
 
 
   => based on operations over db SQL is categorized into following sublanguages. 
@@ -312,12 +313,12 @@ client tool :-
 
  			 SQL
 
-	DDL	DML	 DRL	TCL		DCL
+	DDL	         DML	      DRL      	TCL		          DCL
 
-	create	insert	select	commit		grant	
-	alter	update		rollback		revoke
-	drop	delete		save transaction
-	truncate   merge
+	create	    insert	 select	     commit		     grant	
+	alter	    update		          rollback		     revoke
+	drop          delete		          save transaction
+	truncate       merge
 
   DATA & DATA DEFINITION 
 
@@ -362,9 +363,9 @@ How to connect to sql server :-
  
     SERVER  TYPE 		:-   DB Engine
     SERVER NAME  		:-   DESKTOP-G2DM7GI
-    AUTHENTICATION 	:-   SQL SERVER Authentication
-    LOGIN			:-   SA  (system admin)
-    PASSWORD		:-   123
+    AUTHENTICATION 	     :-   SQL SERVER Authentication
+    LOGIN			     :-   SA  (system admin)
+    PASSWORD		     :-   123
 
   => click connect
 
@@ -384,7 +385,7 @@ How to connect to sql server :-
 
    Name	    	Type	Initial Size  	Autogrowth	Path
    DB4PM     	DATA       8 MB		64 MB		C:\------
-   DB4PM_LOG	LOG        8 MB                          64 MB		c:\---
+   DB4PM_LOG	LOG        8 MB          64 MB		c:\---
 
   PATH :- 
   ----------
@@ -425,13 +426,13 @@ How to connect to sql server :-
    		                                                Datatypes 
 
 
-             CHAR	                   INTEGER	 FLOAT	         CURRENCY       DATE        BINARY
+             CHAR	                   INTEGER	     FLOAT	         CURRENCY       DATE        BINARY
 
- ascii	           unicode             tinyint  		decimal(p,s)      smallmoney        date          binary 
-			   smallint                  numeric(p,s)      money                time          varbinary
- char	            nchar	   int                                                                               datetime   varbinary(max)
- varchar	            nvarchar	   bigint
- varchar(max)       nvarchar(max) numeric(p)
+ ascii	           unicode             tinyint       decimal(p,s)      smallmoney       date          binary 
+			                       smallint         numeric(p,s)         money          time        varbinary
+ char	            nchar	            int                                             datetime    varbinary(max)
+ varchar	            nvarchar	     bigint
+ varchar(max)       nvarchar(max)       numeric(p)
  
 
   char(size) :- 
@@ -513,9 +514,9 @@ How to connect to sql server :-
         Types	  bytes		range
  
         tinyint	  1		 0 to 255	
-        smallint	  2	                 -2^15 (-32768) to 2^15-1 (32767)			
+          smallint	  2	     -2^15 (-32768) to 2^15-1 (32767)			
         int		  4		-2^31  to  2^31-1
-        bigint	  8 		-2^63  to  2^63-1
+        bigint	       8 		-2^63  to  2^63-1
 
      ex  :-     AGE    	  TINYINT
                   EMPID  	  SMALLINT
