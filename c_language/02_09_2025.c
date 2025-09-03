@@ -15,7 +15,7 @@ int main()
   for (int j = 0; j < n; j++)
   {
       int count = 0;
-    for (int i = 1; i < 9; i++)
+    for (int i = 1; i <= 9; i++)
     {
       if (a[j] % i == 0)
         count++;
