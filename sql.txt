@@ -294,7 +294,7 @@ client tool :-
  
    => SQL is common to all relational db softwares 
 
-   USER------SSMS-----------------SQL--------------------SQLSERVER--------------DB
+  USER------SSMS-----------------SQL--------------------SQLSERVER--------------DB
 
   USER------SQLPLUS--------------SQL---------------------ORACLE-----------------DB
 
