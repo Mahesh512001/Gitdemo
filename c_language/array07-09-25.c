@@ -70,7 +70,7 @@ int main()
   for (int i = 0; i < n; i++)
   {
     even = 0;
-    zero = 0;
+    zero = 0; 
     odd = 0;
     for (int j = 0; j < m; j++)
     {
