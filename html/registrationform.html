@@ -1,0 +1,79 @@
+
+
+<!doctype html>
+<html>
+<head>
+<title>registration form</title>
+<style>
+
+#d{
+	width:300px;
+	background:black;
+	color:white;
+	border-radius:15px;
+	box-shadow: 0 0 15px red;
+	margin: 15px;
+	padding: 20px;}
+	
+	div{
+	margin-bottom:15px;}
+
+</style>
+</head>
+<body >
+<div id="d" >
+<h2 align="center">Registration form</h2>
+<div>
+<form action="dad.html" align="justify" >
+
+<div>
+<label for="fnm">Full Name : </label><span>*</span><br>
+<input type="text" id="fnm" name="fnm" autofocus required />
+</div>
+
+<div>
+<label for="cnt">contact Number : </label><span>*</span><br>
+<input type="number" id="cnt" name="cnt" max="9999999999" min="6000000000" required />
+</div>
+
+<div>
+<label for="dob">Date Of Birth : </label><br>
+<input type="date" id="dob" name="dob"/>
+</div>
+
+<div>
+<label for="gen1">Gender</label><br>
+<input type="radio" id="gen1" name="gen"/><label>Male</label>
+<input type="radio" id="gen2" name="gen"/><label>Female</label>
+<input type="radio" id="gen3" name="gen"/><label>Other</label>
+</div>
+
+<div align="justify">
+<label>Select Course: </label>&nbsp;
+<Select >
+<option value="">select Option</option>
+<option value="dsd">Data Science/Big Data</option>
+<option value="cybs">Cybersecurity</option>
+<option value="ccmp">Cloud Computing</option>
+<option value="sd">Software Development</option>
+</select>
+<br><br>
+<label>Which Type of Training</label>&nbsp;
+<Select >
+<option value="">select Option</option>
+<option value="pt">projects training</option>
+<option value="ot">Online Training</option>
+<option value="oft">Offline training</option>
+<option value="pt">Placement training</option>
+</select>
+</div>
+<div>
+<input type="checkbox" align="center" required />
+<label>Accept All terms condition</label><br>
+<button>submit</button>
+</div>
+</form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=2.0">
+<title>example</title>
+<style>
+  h3:after{content:'👍';}
+  h3:before{content:'hi';}
+   
+   ::placeholder{ color:cyan;text-align:center; }
+  
+  p::first-letter{
+   font-size: 26px;
+   background-color: black;
+   color: white;
+  }
+  p::first-line{
+   color:blue;
+  }
+  
+  ol li{
+  color: teal;
+  }
+  ul li {
+  color: red;
+  }
+  
+  ol li :: marker {
+  color:hotpink;
+  }
+  ul li::marker{
+  color: skyblue;
+  }
+  
+  #list li:nth-child(2n+1){
+  color:blue;
+  }
+
+  #list li:nth-child(2n+2){
+  color:black;
+  }
+  
+  
+</style>
+</head>
+<body>
+<h2>demo of pseudo elements</h3>
+<h3>HTML</h3>
+<h3>CSS</h3>
+<h3>javascript</h3>
+<input type="text" placeholder="enter username" >
+<input type="password" placeholder="enter password">
+<p>Apple's iPhone 17 series is all set to go on its first sale tomorrow. However, ahead of the sale, the iPhone 17 Pro Max and iPhone Air have been hit by a camera bug that blacks out a portion of an image in certain scenarios</p>
+<p>The new bug comes to light as Apple faces a growing barrage of criticism over its new iOS 26 operating system, which will come pre-installed on the iPhone 17 series. Apple users first noticed battery drain and performance issues after installing the iOS 26 update, leading Apple to issue a clarification on the matter.</p>
+
+<ol>
+<li>Microsoft</li>
+<li>Google</li>
+<li>Oracle</li>
+<li>Cisco</li>
+<li>Intel</li>
+<li>Meta</li>
+</ol>
+<ul>
+<li>TCS</li>
+<li>Capgemini</li>
+<li>Infosys</li>
+<li>wipro</li>
+<li>CTS</li>
+</ul>
+
+<ol id='list'>
+<li>Microsoft</li>
+<li>Google</li>
+<li>Oracle</li>
+<li>Microsoft</li>
+<li>Google</li>
+<li>Oracle</li>
+<li>Cisco</li>
+<li>Intel</li>
+<li>Meta</li>
+<li>Intel</li>
+<li>Meta</li>
+<li>Google</li>
+<li>Oracle</li>
+<li>Cisco</li>
+<li>Intel</li>
+<li>Meta</li>
+</ol>
+</body>
+</html>
