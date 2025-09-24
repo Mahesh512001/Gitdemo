@@ -52,15 +52,15 @@ what is dbms ?
 Ex :-
 
   CUSTOMER
-  cid	name	     city     => columns / fields / attributes 
-  10	     sachin	mum
-  11	     rahul	del
-  12	     vijay	hyd   => row / record / tuple
+  cid	name	city     => columns / fields / attributes 
+  10	sachin	mum
+  11	rahul	del
+  12	vijay	hyd   => row / record / tuple
 
-   Database         =   collection of tables
-   Table            =   collection of rows & cols
-   Row              =    collection of values(data)
-   Column           =    collection of values of same field
+   Database =   collection of tables
+   Table        =   collection of rows & cols
+   Row         =    collection of values
+   Column    =    collection of values of same field
   
  => every table must contain primary key to uniquely identify 
     
@@ -71,17 +71,16 @@ Ex :-
 Ex :- 
 
  projects 
- projid (pk)     name     duration     cost    client
- 100             ABC      5 years      800    TATA MOTORS
+ projid (pk)   name    duration    cost    client
+ 100             ABC     5 years      800    TATA MOTORS
  101             KLM      3 years      300    KLM Airlines 
 
-
  emp
- empid	ename	job	     sal       projid (fk)
- 1       	A	     SE	     40k	     100
- 2	     B	     SSE	     80k	     101
- 3	     C	     TL	     100k	     100
- 4	     D	     PM	     120k	     101
+ empid	ename	job	sal           projid (fk)
+ 1	A	SE	40k	100
+ 2	B	SSE	80k	101
+ 3	C	TL	100k	100
+ 4	D	PM	120k	101
 
 RDBMS features :- 
 ------------------------
@@ -99,15 +98,15 @@ RDBMS softwares :-
  sql server	from microsoft
  oracle		from oracle corp
  mysql		from oracle corp
- db2		      from ibm
+ db2		from ibm
  postgresql	from postgresql development
- rds		     from amazon
+ rds		from amazon
 
-lang		      dbms
-pop		      hdbms
-oop		      rdbms
-java		      sql server
-c#.net	      oracle
+lang		dbms
+    pop		      hdbms
+    oop		      rdbms
+        java		           sql server
+        c#.net	           oracle
 
 ORDBMS :- 
 ----------------
@@ -165,14 +164,14 @@ Development :-
  => DB is developed by Developers & DBAs (DB Admin)  
 =>  DB is developed by using any rdbms tools like sql server
 
-                Developers		          DBAs
+                Developers		DBAs
 
-                creating tables		     installation of sql server			
-                creating views		     creating database
-                creating synonyms		     creating logins
-                creating sequences		     db backup & restore db
-                creating indexes		     db export & import 
-                creating procedures	     performance tuning	
+                creating tables		installation of sql server			
+                creating views		creating database
+                creating synonyms		creating logins
+                creating sequences		db backup & restore db
+                creating indexes		db export & import 
+                creating procedures	                performance tuning	
                 creating functions
                 creating triggers
                 writing queries
@@ -227,11 +226,11 @@ versions of sql server :-
 
     version                               year
 
-  SQL SERVER 1.1              1991
-  SQL SERVER 4.2              1993
-  SQL SERVER 6.0              1995
-  SQL SERVER 6.5              1996
-  SQL SERVER 7.0              1998
+  SQL SERVER 1.1               1991
+  SQL SERVER 4.2               1993
+  SQL SERVER 6.0               1995
+  SQL SERVER 6.5               1996
+  SQL SERVER 7.0               1998
   SQL SERVER 2000             2000
   SQL SERVER 2005             2005
   SQL SERVER 2008             2008
@@ -276,7 +275,7 @@ client tool :-
   ssms   (sql server management studio)
 
 
-  user----------ssms--------------------------sqlserver-------------------db
+  user----------ssms--------------------------------------sql server-------------------db
 
  SQL   :- 
  ------------
@@ -294,13 +293,13 @@ client tool :-
  
    => SQL is common to all relational db softwares 
 
-  USER------SSMS-----------------SQL--------------------SQLSERVER--------------DB
+   USER------SSMS-----------------SQL-------------------------------SQL SERVER--------------DB
 
-  USER------SQLPLUS--------------SQL---------------------ORACLE-----------------DB
+  USER------SQLPLUS--------------SQL------------------------------ORACLE---------------------DB
 
-  USER------MYSQLWORKBENCH-----------SQL------------------MYSQL-----------------DB
+  USER------MYSQLWORKBENCH-----------SQL------------------MYSQL---------------------DB
 
-  USER-------PgAdmin---------------------SQL----------------POSTGRESQL-----------DB
+  USER-------PgAdmin--------------------------SQL--------------------POSTGRESQL-----------DB
 
 
   => based on operations over db SQL is categorized into following sublanguages. 
@@ -313,12 +312,12 @@ client tool :-
 
  			 SQL
 
-	DDL	         DML	      DRL      	TCL		          DCL
+	DDL	        DML	 	  DRL			TCL		       DCL
 
-	create	    insert	 select	     commit		     grant	
-	alter	    update		          rollback		     revoke
-	drop          delete		          save transaction
-	truncate       merge
+	create	 	insert	 select			commit		   grant	
+	alter		update					rollback		revoke
+	drop		delete					save 		transaction
+	truncate    merge
 
   DATA & DATA DEFINITION 
 
@@ -363,9 +362,9 @@ How to connect to sql server :-
  
     SERVER  TYPE 		:-   DB Engine
     SERVER NAME  		:-   DESKTOP-G2DM7GI
-    AUTHENTICATION 	     :-   SQL SERVER Authentication
-    LOGIN			     :-   SA  (system admin)
-    PASSWORD		     :-   123
+    AUTHENTICATION 	:-   SQL SERVER Authentication
+    LOGIN			:-   SA  (system admin)
+    PASSWORD		:-   123
 
   => click connect
 
@@ -385,8 +384,8 @@ How to connect to sql server :-
 
    Name	    	Type	Initial Size  	Autogrowth	Path
    DB4PM     	DATA       8 MB		64 MB		C:\------
-   DB4PM_LOG	LOG        8 MB          64 MB		c:\---
-
+   DB4PM_LOG	LOG        8 MB                          64 MB		c:\---
+ 
   PATH :- 
   ----------
 
@@ -426,13 +425,13 @@ How to connect to sql server :-
    		                                                Datatypes 
 
 
-             CHAR	                   INTEGER	     FLOAT	         CURRENCY       DATE        BINARY
+             CHAR	                   INTEGER	 FLOAT	         CURRENCY       DATE        BINARY
 
- ascii	           unicode             tinyint       decimal(p,s)      smallmoney       date          binary 
-			                       smallint         numeric(p,s)         money          time        varbinary
- char	            nchar	            int                                             datetime    varbinary(max)
- varchar	            nvarchar	     bigint
- varchar(max)       nvarchar(max)       numeric(p)
+ ascii	           unicode             tinyint  		decimal(p,s)      smallmoney        date          binary 
+			   smallint                  numeric(p,s)      money                time          varbinary
+ char	            nchar	   int                                                                               datetime   varbinary(max)
+ varchar	            nvarchar	   bigint
+ varchar(max)       nvarchar(max) numeric(p)
  
 
   char(size) :- 
@@ -514,9 +513,9 @@ How to connect to sql server :-
         Types	  bytes		range
  
         tinyint	  1		 0 to 255	
-          smallint	  2	     -2^15 (-32768) to 2^15-1 (32767)			
+        smallint	  2	                 -2^15 (-32768) to 2^15-1 (32767)			
         int		  4		-2^31  to  2^31-1
-        bigint	       8 		-2^63  to  2^63-1
+        bigint	  8 		-2^63  to  2^63-1
 
      ex  :-     AGE    	  TINYINT
                   EMPID  	  SMALLINT
@@ -1543,6 +1542,8 @@ summary :-
  DISTINCT	=>   To eliminate duplicates
  TOP 		=>   To select top n rows 
 
+2-sep-25
+
  DML commands :-  (Data Manipulation Lang)
  --------------------------
  
@@ -1553,3 +1554,2915 @@ summary :-
 
  => all DML commands acts on table data.
  => all DML commands are auto saved ( auto committed)
+ 
+     TABLE  =     STRUCTURE (COLS)  +   DATA  (ROWS)
+
+                            
+                           DDL                                   DML
+
+ => To stop auto commit  execute the following command 
+
+           SET IMPLICIT_TRANSACTIONS ON 
+
+ => after executing above command operations are not auto committed.
+
+=>  To save the operation execute COMMIT.
+
+=> To cancel the operation execute ROLLBACK.
+
+UPDATE command :- 
+--------------------------------
+
+  =>  command used to modify table data.
+  =>  using update command we can update all rows or specific rows
+  =>  using update command we can update single or multiple columns 
+
+   UPDATE <tabname> 
+   SET  colname = value , colname = value , -------
+   [WHERE condition]
+ 
+   Ex :- 
+
+   => update all employees comm with 500 ? 
+ 
+       UPDATE emp   SET comm = 500
+
+  => update salesman comm with 800 ? 
+
+     UPDATE emp SET comm = 800  WHERE job='SALESMAN' 
+     
+  => update employees comm with 500 whose comm = null  ?
+
+      UPDATE emp SET comm = 500 WHERE comm IS NULL 
+ 
+ => update comm with null whose job not equals to salesman ? 
+
+      UPDATE emp SET comm = NULL WHERE job <> 'SALESMAN' 
+
+                         NULL assignment   =
+                         NULL comparison   IS
+
+=> update sal with 2000 and comm with 1000 whose empno = 7499 ? 
+
+    UPDATE emp 
+    SET sal = 2000 , comm = 1000
+    WHERE empno = 7499 
+
+ => increment sal by 20% and comm by 10% those working as salesman and joined in 1981 year ?
+
+   UPDATE emp
+   SET sal =   sal + (sal * 0.2) , comm = comm + (comm*0.1)
+   WHERE job='salesman'  AND  hiredate  LIKE  '1981%' 
+
+=> transfer employees from 10th dept to 20th dept ?
+
+     UPDATE emp 
+     SET deptno = 20
+     WHERE deptno = 10 
+ 
+DELETE command :- 
+-------------------------------
+
+  =>  command used to delete row/rows  from table
+  =>  we can delete all rows or specific rows 
+  
+        DELETE FROM <tabname> [WHERE cond] 
+ 
+Ex :- 
+
+  => delete all rows from emp  ? 
+
+       DELETE FROM emp 
+
+ => delete employees who are joined after 2020 ?
+
+     DELETE FROM emp WHERE hiredate > '2020-12-31' 
+
+ => delete  employees joined in sept month ?     yyyy-mm-dd
+
+    DELETE FROM emp WHERE hiredate LIKE  '%-09-%' 
+
+=> delete employees whose empno = 7499,7521,7566 ?
+
+     DELETE FROM emp WHERE empno IN (7499,7521,7566)
+
+3-sep-25
+
+DDL commands :- (Data Definition Lang)
+--------------------------------------------------------------
+
+ CREATE
+ ALTER
+ DROP
+ TRUNCATE
+
+ => all DDL commands acts on table structure / definition (cols,datatype and size)
+ => all DDL commands are auto committed
+ => to stop auto commit execute the following command
+ 
+            SET IMPLICIT_TRANSACTIONS ON
+
+ ALTER command :- 
+ ---------------------------
+
+ => command used to modify table structure
+ => modifying structure means 
+
+  1 adding new columns
+  2 droping columns
+  3 changing datatype
+  4 changing size
+
+ Adding new columns :- 
+ ----------------------------
+
+   ALTER TABLE <tabname>
+             ADD   colname datatype(size) , colname datatype(size) , ----
+
+ Ex :- 
+ 
+  => add column gender to emp table ? 
+
+      ALTER TABLE emp
+            ADD  gender  CHAR(1) 
+
+     after adding by defaul the new column is filled with nulls , to insert
+     data into the new column use update command.
+
+      UPDATE emp
+      SET gender='M'
+      WHERE empno = 7499 
+
+ Droping columns :- 
+ --------------------------
+
+   ALTER TABLE <tabname>
+         DROP  COLUMN  col1,col2,-------
+
+ Ex :- 
+
+ => drop column gender from emp ?
+
+    ALTER TABLE emp
+       DROP COLUMN gender
+
+changing datatype & size :- 
+-------------------------------------
+
+   ALTER TABLE <tabname>
+          ALTER  COLUMN  <colname>   datatype(size) 
+
+ Ex :- 
+
+ => change datatype of empno to int  ?
+ 
+     ALTER TABLE emp
+          ALTER COLUMN empno INT 
+   
+    ALTER TABLE emp
+          ALTER COLUMN empno TINYINT   => ERROR => existing values are
+					        out of tinyint range
+
+ =>  increase the size of ename to 20 ? 
+
+     ALTER TABLE emp
+          ALTER COLUMN ename VARCHAR(20) 
+
+       ALTER TABLE emp
+          ALTER COLUMN ename VARCHAR(5)  => ERROR  => some names
+						contains more than
+						5 chars 
+ DROP command :- 
+ --------------------------
+
+ => command used to drop table from db.
+ => drops table structure along with data 
+   
+           DROP TABLE  <tabname> 
+
+Ex :-   DROP TABLE emp 
+
+  TRUNCATE command :- 
+  ---------------------------------
+
+  => command deletes all the data from table but keeps structure
+  => will empty the table
+  => releases memory allocated for table
+
+           TRUNCATE TABLE  <tabname>
+
+ Ex :-   TRUNCATE TABLE student 
+   
+ => when above command is executed then sql server goes to memory and
+      releases all the pages allocated for table  and when memory is released
+      then data stored in pages also deleted.
+
+ DELETE VS TRUNCATE :-
+ ------------------------------------
+
+	 DELETE				TRUNCATE
+
+ 1	DML command			DDL command
+
+ 2	can delete all rows and		can delete only all rows
+                 specific rows			but cannot delete specific rows
+
+ 3	where cond can be used		where cond cannot be
+	with delete			used with truncate
+
+ 4	deletes row-by-row			deletes all rows at a time
+ 
+ 5	slower				faster
+
+ 6	will not release memory		will release memory 
+
+ 7	will not reset identity			will reset identity 
+
+ 
+ SP_RENAME  :-  
+ -----------------------
+
+  => command used to change tablename and column name
+
+                SP_RENAME   'old name' , ' new name' 
+ 
+Ex :-       
+
+ => rename table student to stud  ?
+
+      SP_RENAME  'STUDENT','STUD'
+ 
+ => rename column m to maths in stud table ? 
+
+      SP_RENAME  'stud.m','maths'
+
+4-sep-25 
+
+  IDENTITY :-  
+  -----------------
+
+  =>  identity is used to generate sequence numbers 
+  =>  used to auto increment column values 
+ 
+             IDENTITY(SEED,INCR)
+
+              SEED  =>  start 
+                                default 1
+
+              INCR  => increment
+	             default 1 
+
+ ex :-
+
+  CREATE TABLE student
+  (
+     sid  INT  IDENTITY(100,1) ,
+     sname VARCHAR(10)
+  )
+
+ INSERT INTO student(sname) VALUES('A')
+ INSERT INTO student(sname) VALUES('B')
+ INSERT INTO student(sname) VALUES('C')
+ INSERT INTO student(sname) VALUES('D')
+
+ INSERT INTO STUDENT VALUES(104,'E')   => ERROR => explicit value for identity column
+					             is not allowed 
+
+ SELECT * FROM  student
+
+ sid	sname
+ 100	A
+ 101	B
+ 102	C
+ 103	D
+
+ How to manually (explicit)  insert  value to identity column :- 
+ ---------------------------------------------------------------------------------
+
+        SET IDENTITY_INSERT STUDENT ON 
+
+         INSERT INTO STUDENT(SID,SNAME) VALUES(110,'P') => 1 row affected 
+
+    SELECT * FROM student
+
+    sid	sname
+   100	A
+   101	B
+   102	C
+   103	D
+   110	P
+
+   DELETE FROM student				TRUNCATE TABLE student
+
+   INSERT INTO student(sname) VALUES('k')		INSERT INTO student(sname) VALUES('K')
+
+   SELECT * FROM student				SELECT * FROM student
+
+    111	K					100	K
+
+
+ How to reset identity manually  :- 
+ ---------------------------------------------
+
+   DBCC   CHECKIDENT(tablename,reseed,value)
+
+   DBCC  => DB console command
+
+  Ex :-   DBCC  CHECKIDENT('student' , reseed,99)
+
+   =======================================================================
+
+   FUNCTIONS :- 
+   ---------------------
+
+ =>  a function accepts some input , performs some calculation and returns one value
+ 
+   Types of functions :- 
+   -----------------------------
+
+   1  CHARACTER
+   2  DATE
+   3  NUMERIC
+   4  CONVERSION
+   5  SPECIAL
+   6  ANALYTICAL
+   7  AGGREGATE 
+
+  CHARACTER functions :- 
+  -----------------------------------
+ 
+  upper()  :- 
+  --------------
+
+  => converts string to uppercase
+
+              UPPER(arg)
+                                 string            'hello'
+                                 colname        ename
+
+  Ex :-  
+
+   SELECT  UPPER('hello')     => HELLO
+
+  LOWER() :- 
+  ---------------
+
+   => converts string to lowercase
+
+                  LOWER(arg) 
+
+ Ex :- 
+
+      SELECT LOWER('HELLO')	    =>	hello 
+
+ => display  EMPNO  ENAME  SAL   ?  display names in lowercase ? 
+
+     SELECT EMPNO,LOWER(ENAME) AS ENAME,SAL  FROM EMP 
+
+ => convert names to lowercase in table ? 
+
+      UPDATE emp  SET ename = LOWER(ename)
+
+ LEN() :- 
+ ----------
+
+ => returns string length i.e. no of chars 
+
+                LEN(arg) 
+
+ Ex :- 
+
+   SELECT  LEN('HELLO WELCOME')	=>    13 
+
+  => display employee list whose name contains more than 5 chars ? 
+
+      SELECT *
+      FROM emp 
+      WHERE LEN(ename) >  5 
+  
+ LEFT() :- 
+ -------------
+
+  => returns characters starting from left 
+ 
+               LEFT(string,no of chars)
+
+ Ex :- 
+  
+  SELECT LEFT('HELLO WELCOME',5)	 =>   HELLO 
+
+ RIGHT() :- 
+ ---------------
+
+ => returns characters starting from right 
+
+                  RIGHT(string,no of chars) 
+
+ Ex :- 
+
+   SELECT RIGHT('HELLO WELCOME',7)	=>	WELCOME
+
+ => employees name starts with 's'   ? 
+
+          WHERE ename LIKE  's%' 
+
+         SELECT * 
+         FROM emp 
+         WHERE LEFT(ename,1) = 's' 
+
+ => employee name ends with 's'  ? 
+
+         SELECT * 
+         FROM emp 
+         WHERE RIGHT(ename,1) = 's' 
+
+5-sep-25 
+
+ => employees name starts and ends with same char ? 
+
+     SELECT *
+     FROM emp 
+     WHERE ename LIKE 'a%a'
+                    OR
+                   ename LIKE  'b%b'
+                   
+   SELECT *
+   FROM emp 
+   WHERE LEFT(ename,1)  =  RIGHT(ename,1) 
+	
+ =>  How to convert initials into capitals ?   
+  
+      SELECT  UPPER(LEFT(ename,1)) + LOWER(RIGHT(ename,LEN(ename)-1))
+      FROM emp
+
+  => generate emailids for employees ? 
+ 
+       empno	ename	emailid
+       7369		smith	smi736@tcs.com
+       7499		allen	all749@tcs.com
+
+     SELECT  empno,ename,
+                     LEFT(ename,3) + LEFT(empno,3) + '@tcs.com'  as emailid
+     FROM emp 
+
+  => store emailids in db ? 
+
+   step 1 :- add emailid column to emp table 
+ 
+   ALTER TABLE emp
+              ADD  emailid  VARCHAR(20)
+
+  step 2 :-   update the column with emailids 
+
+   UPDATE emp 
+   SET emailid = LEFT(ename,3) + LEFT(empno,3) + '@tcs.com' 
+   
+ SUBSTRING() :- 
+ -----------------------
+
+ =>  returns characters starting from specific position 
+
+           SUBSTRING(string,start,no of chars)
+ 
+Ex :- 
+ 
+    SELECT SUBSTRING('HELLO WELCOME',1,5)     =>  HELLO         
+    SELECT SUBSTRING('HELLO WELCOME',10,3)	  =>  COM
+    SELECT SUBSTRING('HELLO WELCOME',7,7)    =>  WELCOME
+
+ CHARINDEX() :- 
+ ----------------------- 
+
+ => returrns character position in  a string 
+
+        CHARINDEX(char, string, [ start ]) 
+
+ Ex :-  
+
+  SELECT CHARINDEX('O','HELLO WELCOME')	=>  5 	
+  SELECT CHARINDEX('K','HELLO WELCOME')     =>  0 
+  SELECT CHARINDEX(' ','HELLO WELCOME')	=>  6
+
+  SELECT CHARINDEX('O','HELLO WELCOME',6)     => 11
+  SELECT CHARINDEX('E','HELLO WELCOME',10)   =>  13 
+
+scenario :- 
+---------------
+
+ CUST
+ cid	cname
+ 10	sachin tendulkar
+ 11	virat kohli
+
+  => display  CID	FNAME	LNAME  ? 
+
+     substring(string,start,no of chars)
+     charindex(char,string,[start])
+
+    fname  =  SUBSTRING(cname,1, CHARINDEX(' ',cname)-1)
+    lname  =  SUBSTRING(cname,CHARINDEX(' ',cname) + 1 ,LEN(cname))
+
+  SELECT CID,
+                SUBSTRING(cname,1, CHARINDEX(' ',cname)-1) AS FNAME,
+                SUBSTRING(cname,CHARINDEX(' ',cname) + 1 ,LEN(cname)) AS LNAME
+ FROM CUST
+
+ => display  CID	FNAME	MNAME	LNAME	? 
+
+  CUST
+ cid	cname
+ 10	sachin ramesh tendulkar
+ 11	mahendra singh dhoni
+
+  REPLICATE() :- 
+  ----------------------
+
+ =>  repeats the given char for given no of times 
+
+           REPLICATE(char,length)
+
+ Ex :-  
+
+ SELECT REPLICATE('*',5)	=>     *****	
+
+ =>  display  ENAME   SAL   ?
+                                     ***
+  
+       SELECT  ename , REPLICATE('*',LEN(sal)) as sal FROM emp 
+
+         SMITH    800.00 	   ******
+         ALLEN   1600.00	   *******
+
+scenario :- 
+
+ ACCOUNTS
+ accno
+ 1234567891567892
+
+  your a/c no  XXXX7892 debited -------
+
+   REPLICATE('X',4)  + RIGHT(accno,4) 
+
+
+ credit_cards
+ card_no
+ 1234567856783456
+
+ 12xxxx456
+
+  LEFT(card_no,2) + REPLICATE('x',4) + RIGHT(card_no,3) 
+ 
+ REPLACE() :- 
+ ---------------------
+
+ => used to replace one string with another string
+
+                REPLACE(string1,string2,string3) 
+
+ => in string1  , string2 replaced with string3
+
+  Ex :-  
+
+  SELECT REPLACE('HELLO','ELL','ABC')		=>   HABCO 	
+  SELECT REPLACE('HELLO','L','ABC')			=>   HEABCABCO
+  SELECT REPLACE('HELLO','ELO','ABC')		=>   HELLO 
+  SELECT REPLACE( '@@HE@@LL@@O@@','@','')  	=>   HELLO
+
+ 6-SEP-25 
+
+  => replace  1980 with 2020 in hiredate ? 
+
+      UPDATE emp SET hiredate = REPLACE(hiredate,'1980','2020')
+
+  TRANSLATE() :- 
+  -----------------------
+
+  => used to translate one char to another char
+
+              TRANSLATE(str1,str2,str3)
+
+ Ex :-  
+
+   SELECT TRANSLATE('HELLO','ELO','ABC')	=>    	HABBC
+
+		E =>  A
+		L =>  B
+		O => C
+
+  SELECT TRANSLATE('HELLO','ELO','A')               =>       ERROR 
+	
+ NOTE :-  second & third arguments no of chars must be same
+
+   => TRANSLATE function can be used to encrypt data i.e. converting plain text to 
+        cipher text 
+
+  Ex :-   display  ENAME   SAL   ?    encrypt salaries ? 
+
+            SELECT  ENAME,
+                            TRANSLATE(SAL , '0123456789.', '$bT*p#&@^%!') AS SAL
+            FROM EMP 
+ 
+            jones	2975.00	  T%@#!$$
+ 
+  =>  remove   '@'   from   '@@HE@@LL@@O@@'  ? 
+
+       SELECT  REPLACE( '@@HE@@LL@@O@@' , '@','')
+
+ =>  remove all special chars from  '@#HE!$LL%^O&*'  ? 
+  
+  SELECT REPLACE (TRANSLATE( '@#HE!$LL%^O&*' , '@#!$%^&*','********'),'*','')
+                                    -----------------------------------------------------------------------------
+                                                        **HE**LL**O**
+
+
+   DATE functions :- 
+   ----------------------------
+
+   GETDATE() :- 
+   --------------------
+
+   => returns current date , time and also milliseconds 
+
+     SELECT GETDATE()	=>     2025-09-06 17:14:15.497
+                                                           ---------------  -----------  ------
+                                                                DATE      TIME      MS
+
+ DATEPART() :- 
+ ---------------------
+
+ => used to get part of the date 
+
+              DATEPART(INTERVAL , DATE)
+
+ 
+ Ex :-  
+
+   SELECT DATEPART(YY,GETDATE())		=>  2025	
+  		    MM			=>  9
+		    DD			=>  6
+		    DW			=>  7
+		    DY			=>  249
+		    HH			=> 17
+                                     MI			=> 26
+		    SS			=> 30
+		    QQ			=> 3 
+
+
+   DW  => day of the week (1-7)
+   DY   => day of the year   (1-365)
+   QQ   => quarter  
+                 JAN -  MAR  1
+                 APR - JUN    2
+                 JUL -  SEP    3
+                 OCT - DEC   4
+
+=>  display  ENAME     YEAR_OF_JOIN   ? 
+
+     SELECT   ename ,  DATEPART(yy,hiredate) as year_of_join  FROM emp 
+
+ => display employees joined in 1981 year ? 
+
+     WHERE  hiredate BETWEEN  '1981-01-01' AND '1981-12-31'
+
+     WHERE hiredate LIKE  '1981%' 
+
+     SELECT * FROM emp WHERE DATEPART(yy,hiredate) = 1981 
+
+ => display employees joined in 1980,1983,1985 ? 
+
+     WHERE hiredate BETWEEN  '1980-01-01' AND '1980-12-31'
+                    OR
+                    hiredate BETWEEN '1983-01-01' AND '1983-12-31'
+                    OR
+                    hiredate BETWEEN '1985-01-01' AND '1985-12-31'
+
+    WHERE hiredate LIKE  '1980%'
+                   OR
+                   hiredate LIKE '1983%'
+                   OR
+                  hiredate LIKE '1985%'
+
+   SELECT * FROM emp WHERE DATEPART(yy,hiredate)  IN (1980,1983,1985)
+   
+ => employees joined in leap year ? 
+
+        year%4 = 0
+
+     SELECT *
+     FROM emp 
+     WHERE  DATEPART(yy,hiredate)%4 = 0      
+
+ => employees joined in jan,apr,dec months ? 
+
+     SELECT * 
+     FROM emp 
+     WHERE DATEPART(mm,hiredate) IN (1,4,12) 
+
+ 8-sep-25 
+
+ => display employees joined on sunday ? 
+
+    SELECT *
+    FROM emp 
+    WHERE DATEPART(dw,hiredate) = 1 
+
+=> employees joined in 2nd quarter of 1981 year ? 
+
+  SELECT *
+  FROM emp 
+  WHERE  DATEPART(yy,hiredate) = 1981
+                  AND
+                  DATEPART(qq,hiredate) = 2 
+
+ DATENAME() :- 
+ ---------------------
+
+  => similar to datepart returns part of the date
+
+           DATENAME(interval , date) 
+
+		MM			DW 
+
+  DATEPART	9			2			
+
+ DATENAME	Septembe	r		Monday
+
+ => waq  to display on which day india got independence ? 
+
+     SELECT DATENAME(DW,'1947-08-15')    => Friday
+
+ => display  ENAME   DAY   ? 
+
+   SELECT  ename, DATENAME(dw,hiredate) as day  FROM emp 
+
+ FORMAT() :- 
+ ----------------
+
+  => function used to display dates in different formats 
+ 
+                   FORMAT(date , 'format')
+
+ Ex :- 
+
+  SELECT FORMAT(getdate(),'MM/dd/yyyy') 		=>    09/08/2025
+  SELECT FORMAT(getdate(),'dd-MM-yyyy hh:mm:ss')	=>    08-09-2025 04:45:01
+  SELECT FORMAT(getdate(),'dd-MMM-yyyy')		=>    08-Sep-2025
+  SELECT FORMAT(getdate(),'dd-MMMM-yyyy')		=>    08-September-2025
+  SELECT FORMAT(getdate(),'dd-MM-yyyy dddd')		=>    08-09-2025 Monday
+
+ => display  ENAME   HIREDATE  ?
+      display hiredates in dd/mm/yyyy format ? 
+
+      SELECT ename, FORMAT(hiredate,'dd/MM/yyyy') as hiredate 
+      FROM emp 
+
+scenario :- 
+---------------
+
+ INSERT INTO emp(empno,ename,sal,hiredate)
+             VALUES(100,'abc',3000,getdate())
+
+ => display list of employees joined today  ? 
+
+   SELECT *
+   FROM emp 
+   WHERE hiredate = getdate()    =>  no rows 
+ 
+                 2025-09-08  =   2025-09-08 16:59:20.123
+  
+ => in the above example  date is compared with date & time , so condition is
+      false , so record is not selected. To overcome this use FORMAT function.
+
+   SELECT *
+   FROM emp 
+   WHERE hiredate =  FORMAT(getdate() ,'yyyy-MM-dd') 
+
+                2025-09-08 =  2025-09-08
+
+ DATEADD() :- 
+ ------------------
+
+ => used to add/subtract  years/months/days to/from a date 
+
+           DATEADD(interval , int , date) 
+
+ Ex :- 
+ 
+SELECT DATEADD(dd,10,getdate())	=>     2025-09-18 17:09:21.917
+SELECT DATEADD(mm,2,getdate())	=>     2025-11-08 17:09:59.960
+SELECT DATEADD(yy,-1,getdate())	=>     2024-09-08 17:10:39.250
+
+=> list of employees joined in in the last 5 years ? 
+
+   SELECT *
+   FROM emp 
+   WHERE hiredate >= FORMAT(DATEADD(yy,-5,getdate()) , 'yyyy-MM-dd')
+                                                                      
+  WHERE hiredate BETWEEN DATEADD(yy,-5,getdate())  AND  GETDATE()
+   
+=>  
+  
+   GOLD_RATES
+   dateid		rate
+   2020-01-01	?
+   2020-01-02	?
+   
+
+  2025-09-08	?
+
+ => display today's gold rate ?
+ => display yesterday's gold rate ?
+ => display last month same day gold rate ?
+ => display last year same day gold rate ?
+ => display last 1 month gold rates ? 
+
+ SELECT *
+ FROM gold_rates
+ WHERE dateid =  FORMAT(getdate() , 'yyyy-MM-dd')
+
+ WHERE dateid =    FORMAT(DATEADD(dd,-1,getdate()),'yyyy-MM-dd')
+
+ WHERE dateid =  FORMAT(DATEADD(mm,-1,getdate()),'yyyy-MM-dd')
+ 
+ WHERE dateid = FORMAT(DATEADD(yy,-1,getdate()),'yyyy-MM-dd')
+
+ WHERE dateid >= FORMAT(DATEADD(mm,-1,getdate()),'yyyy-MM-dd')
+
+9-sep-25
+
+ DATEDIFF() :- 
+ -------------------
+
+  => returns difference between two dates in given interval.
+
+          DATEDIFF(interval , start date,end date)
+
+Ex :- 
+
+   SELECT DATEDIFF(yy,'2024-09-08',getdate())	=>	1	
+   SELECT DATEDIFF(mm,'2024-09-08',getdate())	=>	12
+   SELECT DATEDIFF(dd,'2024-09-08',getdate())	=>.	365
+
+  => display  ENAME    EXPERIENCE in years ? 
+   
+       SELECT  ename,DATEDIFF(yy,hiredate,getdate())  as experience FROM emp
+
+         smith	45
+         allen	44
+
+ => display  ENAME   EXPERIENCE ?
+                                   M years N months 
+
+  ex :-  experience = 40 months =  3 years 4 months 
+
+           years  = months/12 = 40/12  = 3
+           months = months%12 = 40%12 = 4
+
+    SELECT ename,
+                   DATEDIFF(mm,hiredate,getdate())/12 as years,
+                   DATEDIFF(mm,hiredate,getdate())%12 as months
+   FROM emp 
+
+ smith	44	9
+allen	44	7
+
+EOMONTH() :- 
+--------------------
+
+  => returns last day of the month
+    
+                      EOMONTH(date,int)
+
+Ex :- 
+
+ SELECT EOMONTH(GETDATE(),0)	=>	2025-09-30
+ SELECT EOMONTH(GETDATE(),1)	=>	2025-10-31
+ SELECT EOMONTH(GETDATE(),-1)	=>	2025-08-31
+  
+1  display next month 1st day ?
+2  display current month 1st day ?
+3  display next year 1st day ?
+4  display current year 1st day ? 
+
+ Numeric Functions :- 
+ ----------------------------
+
+ rounding numbers :- 
+ ---------------------------
+
+ ROUND
+ CEILING
+ FLOOR
+
+  38.567894    => 39 
+                            38.57
+                            38.5679
+
+ ROUND() :- 
+ ---------------
+
+  => function used to round number to integer or to decimal places
+  => round function acts according to average.
+
+           ROUND(number,decimal places)
+
+Ex :-  
+
+  SELECT ROUND(38.567894 , 0)	=>	39
+
+            38-----------------------38.5-----------------------------39
+
+         number >= avg  => rounded to highest
+         number < avg    => rounded to lowest
+
+  SELECT ROUND(38.467894 , 0)	=> 	38
+
+  SELECT ROUND(38.467894 , 2)	=>	38.47
+  
+  SELECT ROUND(38.463894 , 2)	=>	38.46
+
+  SELECT ROUND(38.467894 , 4)	=>	38.4679
+
+ SELECT ROUND(38.467894 , 1)	=>	38.5
+
+ SELECT ROUND(386,-1)		=>	390
+
+      380--------------------------385---------------------------------390	
+  
+SELECT ROUND(386,-2)		=>	400
+
+    300----------------------------350--------------------------------------400
+
+SELECT ROUND(386,-3)		=>	0
+
+    0---------------------------------500----------------------------------1000
+
+ SELECT ROUND(4567,-1),ROUND(4567,-2),ROUND(4567,-3)
+
+  O/P :-    4570	4600	5000
+
+  CEILING() :- 
+  -------------------
+
+  => rounds number always to highest integer
+
+                 CEILING(number)
+
+Ex :- 
+
+    SELECT CEILING(3.1)	=>	4	
+
+ FLOOR() :- 
+------------------
+
+ => rounds number always to lowest integer
+
+       FLOOR(number)
+
+ Ex :- 
+
+    SELECT FLOOR(3.9)	=>	3
+
+ => round salaries to hundreds in emp table ? 
+
+     UPDATE EMP set SAL = ROUND(sal,-2)
+
+ conversion functions :- 
+ -------------------------------
+
+ => used to convert one datatype to another datatype
+
+    1  CAST
+    2  CONVERT 
+
+ CAST :- 
+ -------------
+
+              CAST(expr  as target-type)
+
+Ex :- 
+
+   SELECT CAST(10.5   AS INT)	=>     10
+     
+  => display  smith earns 800   
+                     allen earns 1600   ? 
+
+       SELECT  ename  + ' earns '  + sal  FROM emp   => ERROR
+ 
+       in concatenation all expressions must be char type 
+
+      SELECT  ename  + ' earns '  + CAST(sal AS varchar)   FROM emp 
+
+ => display smith joined as clerk on 1980-12-17   ? 
+
+      SELECT  ename + '  joined as ' + job + '  on '  + CAST(hiredate AS VARCHAR)  FROM emp 
+
+ CONVERT :- 
+ -------------------
+
+     CONVERT(target-type  ,  source-expr)
+
+ Ex :- 
+
+  SELECT  CONVERT(INT , 10.5)	=>	10
+ 
+  difference between CAST & CONVERT  ?
+
+  1  using convert function we can display dates in different formats but not possible using cast
+  2  using convert we can display money in different styles but not possible using cast
+
+ Date styles using convert function :- 
+ --------------------------------------------------
+
+ => To display dates in different formats first convert date to char type
+ 
+          CONVERT(VARCHAR , DATE ,  STYLE-NUMBER)
+
+ Ex :- 
+
+   SELECT CONVERT(VARCHAR,GETDATE(),101)		=>  09/09/2025	   
+   SELECT CONVERT(VARCHAR,GETDATE(),105)		=>  08-09-2025
+   SELECT CONVERT(VARCHAR,GETDATE(),110)		=>  09-08-2025
+   SELECT CONVERT(VARCHAR,GETDATE(),114)		=>  17:38:02:180
+ 
+  => display  ENAME   HIREDATE  ?
+       display   hiredates in  dd/mm/yyyy format ? 
+
+       SELECT ENAME,CONVERT(VARCHAR,HIREDATE,103) AS HIREDATE FROM EMP 
+    
+ 10-sep-25 
+
+  Money Styles using convert function :- 
+  ----------------------------------------------------
+
+  => To display money in different styles  first convert money to char type      
+
+                    CONVERT(VARCHAR , MONEY ,  STYLE-NUMBER)
+
+ Ex :- 
+
+     style-number => 1  =>   display number with thousand seperator
+
+    SELECT  ENAME, CONVERT(VARCHAR,SAL,1)  FROM EMP   
+
+      smith	800
+      allen	1,600
+      king	5,000
+
+Special Functions :-
+-----------------------------
+
+ISNULL() :- 
+---------------
+
+ => used to convert null values 
+
+                  ISNULL(arg1,arg2) 
+
+ =>  if arg1 = null then returns arg2
+       if arg1 <> null then returns arg1 only 
+
+Ex :- 
+
+  SELECT   ISNULL(100,200)		=>	100
+  SELECT   ISNULL(NULL,200)	=>	200
+  
+=> display  ENAME   SAL  COMM   TOTSAL    ?
+
+                  TOTSAL = SAL + COMM 
+
+      SELECT ENAME,SAL,COMM,SAL+COMM AS TOTSAL FROM EMP 
+
+	smith	800	null	null
+	allen	1600	300	1900
+
+        X + NULL  =>  NULL
+        X - NULL   =>  NULL    
+  
+      SELECT  ENAME,SAL,COMM,SAL+ISNULL(COMM,0) AS TOTSAL FROM EMP 
+
+      	smith	800	null	800
+	allen	1600	300	1900
+
+     => display  ENAME  SAL   COMM   ?
+
+          if comm = NULL display  N/A 
+
+          SELECT  ENAME,SAL,ISNULL(CAST(COMM AS VARCHAR),'N/A') AS COMM
+          FROM EMP 
+  
+ANALYTICAL  / WINDOW functions :-
+----------------------------------------------------
+
+1 rank
+2 dense_rank
+3 row_number
+4 lag
+5 lead
+
+RANK & DENSE_RANK  :- 
+------------------------------------ 
+
+ => functions used to find ranks 
+ => ranking is always based on some column ( for ex   sal ,hiredate etc)
+ => for rank functions data must be sorted 
+
+        RANK() OVER (ORDER BY COLNAME ASC /DESC, -------)
+        DENSE_RANK() OVER (ORDER BY COLNAME ASC/DESC, -----)
+
+Ex :- 
+
+ => display ranks of the employees based on sal and highest paid employee should get 1st rank ?
+
+      SELECT empno,ename,sal,
+                     RANK() OVER  (ORDER BY sal DESC) as rnk
+      FROM emp 
+  
+       SELECT empno,ename,sal,
+                     DENSE_RANK() OVER  (ORDER BY sal DESC) as rnk
+      FROM emp 
+
+     difference between RANK & DENSE_RANK  ? 
+
+   1  rank function generates gaps but dense_rank will not generate gaps 
+   2  in rank function ranks may not be in sequence , but in dense_rank ranks are always in sequence
+
+    SAL		RANK			DENSE_RANK
+   5000		1			1
+   4000		2			2
+   3000		3			3
+   3000		3			3
+   3000		3			3
+   2000		6			4
+   2000		6			4
+   1000		8			5
+
+ => find ranks based on sal , if salaries are same then ranking should be based on hiredate ? 
+ 
+    SELECT empno,ename,hiredate,sal,
+                 DENSE_RANK() OVER  (ORDER BY sal DESC,hiredate ASC) as rnk
+    FROM emp 
+
+7839	king	1981-11-17	5000.00	1
+7566	jones	1981-04-02	3000.00	2
+7902	ford	1981-12-03	3000.00	3
+7788	scott	1982-12-09	3000.00	4
+7698	blake	1981-05-01	2900.00	5
+
+PARTITION BY clause :- 
+------------------------------------
+
+ => partition by clause is used to divide the table based on one or more columns.
+
+ => used to find ranks with in group , for ex to find ranks with in dept first divide the
+      table dept wise using partition by clause and apply rank / dense_rank functions on
+      each partition.
+
+  SELECT  empno,ename,sal,deptno,
+                  DENSE_RANK() OVER (PARTITION BY deptno ORDER BY sal DESC) as rnk
+  FROM emp
+ 
+11-sep-25 
+
+ ROW_NUMBER() :- 
+ --------------------------
+
+ => returns record numbers
+ => row_number is also based on one or more fields
+ => for row_number also data must be sorted 
+
+        ROW_NUMBER() OVER (ORDER BY colname ASC/DESC,-----)
+
+Ex 1  :-  row_number based on sal 
+ 
+ SELECT empno,ename,sal,
+         ROW_NUMBER() OVER (ORDER BY sal DESC) as rno
+ FROM emp
+
+7839	king	5000.00	1
+7902	ford	3000.00	2
+7566	jones	3000.00	3
+7788	scott	3000.00	4
+7698	blake	2900.00	5
+
+Ex 2 :-  row_number based on empno
+ 
+ SELECT empno,ename,sal,
+           ROW_NUMBER() OVER (ORDER BY empno ASC) as rno
+ FROM emp
+
+7369	smith	800.00	1
+7499	allen	1600.00	2
+7521	ward	1300.00	3
+7566	jones	3000.00	4
+7654	martin	1300.00	5
+
+  SAL		RNK		DRNK		RNO
+  5000		1		1		1
+  4000		2		2		2
+  3000		3		3		3
+  3000		3		3		4
+  3000		3		3		5
+  2000		6		4		6
+  2000		6		4		7
+  1000		8		5		8
+
+LAG & LEAD :- 
+----------------------
+
+ LAG(colname,INT) OVER (ORDER BY ---)       =>  returns previous  row value
+ LEAD(colname,INT) OVER (ORDER BY ---)      =>  returns next row value
+
+Ex  1  :- 
+ 
+ SELECT empno,ename,sal,
+        LAG(sal,1) OVER (ORDER BY empno ASC) as prev_sal
+ FROM emp
+ 
+7369	smith	800.00	NULL
+7499	allen	1600.00	800.00
+7521	ward	1300.00	1600.00
+7566	jones	3000.00	1300.00
+
+Ex 2 :-  
+
+    CREATE TABLE population
+   (  
+     year   INT,
+     population  NUMERIC
+  )
+
+ INSERT INTO population VALUES(2020,1328024498) , 
+                                                        (2021,1402617695), 
+                                                        (2022,1425423212), 
+                                                        (2023,1438069596),
+                                                        (2024,1450935791)
+
+ SELECT * FROM population
+
+2020	1328024498
+2021	1402617695
+2022	1425423212
+2023	1438069596
+2024	1450935791
+
+ => display  YEAR     POPULATION    GROWTH  ? 
+
+    SELECT  YEAR,POPULATION ,
+                     POPULATION  - LAG(POPULATION,1) OVER (ORDER BY year ASC) AS GROWTH
+    FROM POPULATION
+
+2020	1328024498	NULL
+2021	1402617695	74593197
+2022	1425423212	22805517
+2023	1438069596	12646384
+2024	1450935791	12866195
+
+=> display  YEAR     POPULATION    GROWTH     GROWTH_PCT  ?
+
+                      PCT  =    (GROWTH / PREVIOUS YEAR POPULATION)*100
+
+    SELECT YEAR ,  POPULATION ,
+    POPULATION  - LAG(POPULATION,1) OVER (ORDER BY year ASC) AS GROWTH ,
+    ((POPULATION  - LAG(POPULATION,1) OVER (ORDER BY year ASC)) / LAG(POPULATION,1) OVER (ORDER BY year ASC))*100 AS PCT
+     FROM POPULATION
+
+=> display  ENAME   HIREDATE     DAYS  ? 
+ 
+   SELECT ENAME,HIREDATE,
+    DATEDIFF(DD ,   LAG(HIREDATE,1) OVER (ORDER BY HIREDATE ASC), HIREDATE) AS DAYS
+   FROM EMP       
+  
+    smith	1980-12-17	NULL
+    allen	1981-02-20	65	
+    ward	1981-02-22	2 
+
+ AGGREGATE functions :-
+ ----------------------------------
+
+ => getting single value from group of values is called aggregate
+ => these functions process group of rows and returns one value
+  
+ MAX
+ MIN
+ SUM
+ AVG
+ COUNT
+ COUNT(*)
+
+ MAX() :- 
+ ----------
+
+  => returns maximum value
+
+                    MAX(colname) 
+
+ Ex :- 
+
+   SELECT MAX(SAL) FROM EMP 		=>   5000
+   SELECT MAX(HIREDATE) FROM EMP 	=>  1983-01-12
+   SELECT MAX(ENAME) FROM EMP		=>  ward
+
+ MIN() :- 
+ ------------
+
+ => returns minimum value
+ 
+                                MIN(colname) 
+
+ Ex :- 
+
+  SELECT MIN(SAL) FROM EMP 		=> 800.00
+  SELECT MIN(HIREDATE) FROM EMP 		=> 1980-12-17
+  SELECT MIN(ENAME) FROM EMP		=>  adams
+
+  SUM() :- 
+  ------------
+
+  => returns total 
+
+                          SUM(colname) 
+Ex :- 
+
+  SELECT SUM(SAL) FROM EMP 	=>    29300.00
+
+ => round total sal to thousands ? 
+
+     SELECT ROUND(SUM(SAL) , -3)  FROM EMP    => 29000
+
+    29000-----------------------29500-----------------------------30000
+
+=> after rounding display total sal with thousand seperator ? 
+
+   SELECT  CONVERT(VARCHAR ,  ROUND(SUM(SAL) , -3)  , 1)
+    FROM EMP 
+ 
+    o/p :-   29,000.00
+
+ 12-sep-25
+
+ AVG() :- 
+ ----------
+
+ => returns average value
+              
+                AVG(colname)
+
+ Ex :- 
+
+   SELECT AVG(SAL) FROM EMP     =>   2092.8571
+
+ => round avg sal to lowest integer ? 
+ 
+   SELECT  FLOOR(AVG(SAL)) FROM EMP   => 2092
+
+   2092-------------------------------------------2093
+
+    SELECT  CEILING(AVG(SAL)) FROM EMP   => 2093
+
+ NOTE :- 
+
+  sum,avg functions can be applied on on numeric columns 
+  but cannot be applied on char,date columns 
+
+  COUNT() :- 
+  ------------------
+
+  => returns no of values present
+
+         COUNT(colname) 
+
+ Ex :- 
+
+   SELECT COUNT(empno) FROM emp   => 14 
+   SELECT COUNT(comm) FROM emp    =>  4  => nulls are not counted 
+ 
+ COUNT(*) :- 
+ ----------------
+
+  => returns no of rows in a table
+    
+   SELECT COUNT(*) FROM emp    => 14 
+
+  T1
+  F1
+  10
+  NULL
+  20
+  NULL
+  30
+  NULL
+
+     COUNT(F1)	=>	3
+     COUNT(*)	=>	6
+
+=> display no of employees joined in 1981 year ?
+ 
+     SELECT COUNT(*)
+     FROM emp 
+     WHERE DATEPART(yy,hiredate) = 1981
+
+ => display no of employees joined on sunday ?
+
+     SELECT COUNT(*)
+     FROM emp   
+     WHERE DATEPART(dw,hiredate) = 1
+  
+     WHERE  DATENAME(dw,hiredate) = 'sunday' 
+
+ => display no of employees joined in 2nd quarter of 1981 year ?
+
+    SELECT COUNT(*)
+    FROM emp 
+    WHERE DATEPART(qq,hiredate) = 2
+                   AND
+                   DATEPART(yy,hiredate) = 1981 
+
+ 
+ SELECT COUNT(1) FROM emp  => 14
+ SELECT COUNT('HELLO') FROM emp = >14 
+
+NOTE :- 
+
+1   count(1) gives good performance than count(*)
+
+2   aggregate functions are not allowed in where clause 
+     and they are allowed only in select,having clauses.
+
+     name of the employee earning max salary ?
+
+     SELECT ename
+     FROM emp
+     WHERE sal = MAX(sal)  => ERROR 
+
+    find the departments having more than 3 employees ?
+
+    SELECT deptno
+    FROM emp
+    WHERE COUNT(*) > 3   =>  ERROR
+
+ 			                 functions
+
+char	    date	        numeric	conversion	speical	 analytical               aggregate
+	
+upper	   getdate	        round	cast		isnull	 rank		max
+lower	   datepart        ceiling	convert			 dense_rank	min
+len	   datename      floor					 row_number	sum
+left	   dateadd						 lag		avg
+right	   datediff						 lead		count
+substring     eomonth							count(*)
+replicate
+replace
+translate
+
+=============================================================
+
+CASE statement :-
+------------------------
+
+=> used to implement IF-ELSE in sql queries
+=> using case statement we can return values based on conditions
+=> case statements are 2 types 
+
+  1 simple case
+  2 searched case
+
+simple case :- 
+-------------------
+
+=> use simple case when conditions based on "=" operator
+
+ CASE colname / expr
+ WHEN value1 THEN return expr1
+ WHEN value2 THEN return expr2
+ -----------------------
+ ELSE return expr
+ END
+
+Ex :- 
+
+  => display  ENAME   JOB   ? 
+
+         if job=CLERK  display WORKER
+                   MANAGER        BOSS
+                   PRESIDENT      BIG BOSS
+                   else                    EMPLOYEE
+
+     SELECT ename,
+                    CASE job
+                    WHEN 'CLERK' THEN 'WORKER'
+                    WHEN 'MANAGER' THEN 'BOSS'
+                    WHEN 'PRESIDENT' THEN 'BIG BOSS'
+                    ELSE  'EMPLOYEE'
+                    END as job
+     FROM emp 
+ 
+ => increment salaries as follows ?
+
+      if deptno = 10  incr sal by  10%
+                        20                    15%
+                        30                     20%
+                    others                   5%
+
+   UPDATE EMP 
+   SET SAL =  CASE DEPTNO
+                       WHEN 10 THEN SAL + (SAL*0.1)
+	       WHEN 20 THEN SAL + (SAL*0.15)
+	       WHEN 30 THEN SAL + (SAL*0.2)
+	       ELSE SAL + (SAL*0.05)
+	       END
+
+ searched case :- 
+ -----------------------
+
+ => use searched case when conditions not based on "=" operator.
+
+  CASE
+  WHEN cond1 THEN return expr1
+  WHEN cond2 THEN return expr2
+  --------------------
+  ELSE return expr
+  END
+
+ => display  ENAME    SAL     SALRANGE  ?
+
+        if sal > 3000 display  HISAL
+          sal < 3000  display  LOSAL
+          else  display            AVGSAL
+
+   SELECT ename,sal,
+                  CASE
+                  WHEN sal>3000 THEN 'HISAL'
+                  WHEN sal<3000 THEN 'LOSAL'
+                  ELSE 'AVGSAL'
+                  END as salrange
+   FROM emp 
+
+ =>  display  SNO   TOTAL   AVG  RESULT  ? 
+  
+ student
+ sno	sname	s1	s2	s3
+  1	A	80	90	70
+  2	B	30	50	60
+
+ SELECT sno,
+                s1+s2+s3 as total,
+                (s1+s2+s3)/3 as avg,
+                CASE
+                WHEN s1>=35 AND s2>=35 AND s3>=35 THEN 'PASS'
+                ELSE 'FAIL'
+                END as result
+ FROM student
+
+=============================================================================
+
+ 13-sep-25 
+
+  GROUP BY clause :- 
+  =================
+
+  => GROUP BY clause is used to group rows based on one or more columns
+        to calculate min,max,sum,avg,count for each group. For ex to calculate
+        dept wise total sal , first group of the rows based on dept and apply 
+        sum function on each dept 
+
+        EMP
+        empno  ename  sal   deptno
+        1	    A	3000 10			     10	1	A	3000
+        2          B          5000  20    GROUP BY deptno		5	E	3000		10	6000
+        3          C          6000  30 ==================>
+        4          D          4000  20			     20	2	B	5000    =======>	20	9000
+        5          E          3000  10				4	D	4000
+
+      					     30	3	C	6000		30	6000
+					
+                                                   
+
+       detailed data									summarized data 
+
+ 
+ => GROUP BY clause converts detailed data to summarized data which is useful for analysis
+
+ SELECT columns
+ FROM tabname
+ [WHERE cond] 
+ GROUP BY col1,col2,-------
+ [HAVING cond]
+ [ORDER BY col ASC/DESC,----]
+
+Execution :- 
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY 
+
+Examples :- 
+------------------
+
+  => display dept wise total salary ?
+
+       SELECT deptno,SUM(sal) as totsal
+       FROM emp
+       GROUP BY deptno
+
+ FROM emp :- 
+ -----------------
+
+ EMP
+ empno	ename	sal	deptno
+ 1	A	3000	10
+ 2	B	5000	20
+ 3	C	4000	30
+ 4	D	4000	20
+ 5	E	3000	30
+ 6	F	6000	10
+ 
+GROUP BY deptno :-
+----------------------------
+   
+10	1	A	3000
+	6	F	6000
+
+ 20	2	B	5000
+	4	D	4000
+
+ 30	3	C	4000
+	5	E	3000
+
+SELECT deptno,SUM(sal) as totsal :- 
+--------------------------------------------------
+
+10	9000
+20	9000
+30	7000
+
+=> display job wise summary (min sal,max sal,total sal,avg sal,no of employees) ?
+
+  SELECT job,MIN(sal) as minsal,
+           	        MAX(sal) as maxsal,
+	        SUM(sal) as totsal,
+	        AVG(sal) as avgsal,
+	        COUNT(*) as cnt
+ FROM emp
+ GROUP BY job
+
+ANALYST		3000.00	3000.00	6000.00	3000.00		2
+CLERK		800.00	1300.00	4150.00	1037.50		4
+MANAGER	2450.00	2975.00	8275.00	2758.3333	3
+PRESIDENT	5000.00	5000.00	5000.00	5000.00		1
+SALESMAN	1250.00	1600.00	5600.00	1400.00		4
+
+ => display year wise no of employees joined ? 
+
+     SELECT DATEPART(YY,HIREDATE) AS YEAR,COUNT(*) AS CNT
+     FROM EMP 
+     GROUP BY DATEPART(YY,HIREDATE)
+
+    	1980	1
+	1981	10
+	1982	2
+	1983	1
+
+  
+        GROUP BY  YEAR   =>  invalid
+        ORDER BY  YEAR   =>  valid
+ 
+  NOTE :- 
+
+   =>  column alias cannot be used in group by clause because group by clause is executed
+         before select.
+
+  =>  column alias can be used in order by clause because order by clause is executed after select
+
+  => display no of employees joined on each day  ? 
+
+      SELECT DATENAME(DW,HIREDATE) AS DAY,COUNT(*) AS CNT
+      FROM EMP 
+      GROUP BY DATENAME(DW,HIREDATE)
+ 
+ => display no of employees joined in each month in the year 1981 ?
+
+SELECT DATENAME(MM,HIREDATE) AS MONTH,COUNT(*) AS CNT
+FROM EMP 
+WHERE DATEPART(YY,HIREDATE) = 1981
+GROUP BY DATENAME(MM,HIREDATE)
+
+ => find the departments having more than 3 employees ? 
+
+   SELECT deptno,COUNT(*) as cnt
+   FROM emp 
+   WHERE COUNT(*) > 3 
+   GROUP BY deptno             =>  ERROR
+
+    above query returns error because sql server cannot calculate dept wise count
+    before group by and it can calculate only after group by , so apply the condition
+    COUNT(*) > 3  after group by using HAVING clause.
+
+    SELECT deptno,COUNT(*) as cnt
+    FROM emp 
+    GROUP BY deptno
+    HAVING COUNT(*) > 3
+    
+   	20	5
+	30	6
+
+WHERE VS HAVING clause :- 
+-------------------------------------------
+
+	 WHERE				HAVING
+
+1	selects specific rows			selects specific groups 
+
+ 2	conditions applied			conditions applied
+	before group by			after group by 
+
+ 3	use where clause			use having clause
+	if cond doesn't contain		if cond contains 
+	aggregate function			aggregate function
+
+15-SEP-25 
+
+ => display job wise no of employees 
+      where job='clerk','manager'
+      no of emps > 3  ? 
+
+      SELECT job, COUNT(*) as cnt
+      FROM emp 
+      WHERE job IN ('CLERK','MANAGER')
+      GROUP BY job
+      HAVING COUNT(*) > 3 
+
+	CLERK	4
+
+=> find southern states having more than 5cr population  ? 
+
+  PERSONS
+  aadharno	name	gender	dob	addr	city	state       
+  130+ CR
+
+  SELECT state,COUNT(*) as population
+  FROM persons
+  WHERE state IN ('AP','TG','TN','KA','KL')
+  GROUP BY state 
+  HAVING COUNT(*) > 50000000
+  
+ => display dept wise and with in dept job wise total salary ?
+ 
+          SELECT deptno,job,SUM(sal) as totsal,COUNT(*) as cnt
+          FROM emp 
+          GROUP BY deptno,job 
+          ORDER BY deptno ASC 
+
+ 	10	CLERK		1300	1
+		MANAGER	2450	1		
+		PRESIDENT	5000	1
+
+
+	20	ANALYST		6000	2
+		CLERK		1900	2
+		MANAGER	2975	1
+
+	30	CLERK		950	1
+		MANAGER	2850	1
+		SALESMAN	5600	4
+
+
+   => display year wise and with in year quarter wise no of employees joined ? 
+
+       SELECT DATEPART(yy,hiredate) as year,
+                          DATEPART(qq,hiredate) as qrt,
+                          COUNT(*) as cnt
+       FROM emp
+       GROUP BY  DATEPART(yy,hiredate) ,DATEPART(qq,hiredate)
+       ORDER BY year ASC 
+       
+  => waq to display duplicate records ? 
+
+  emp11
+  empno	ename	sal 
+  1	A	5000
+  2	B	6000
+  3	C	7000
+  1	A	5000
+  2	B	6000
+
+ SELECT empno,ename,sal 
+ FROM emp11 
+ GROUP BY empno,ename,sal
+ HAVING COUNT(*) > 1 
+ 
+ ROLLUP & CUBE :- 
+ ---------------------------
+
+=> these two functions are used to calculate subtotals and grand total
+ 
+                    GROUP BY  ROLLUP(col1,col2,--)
+                    GROUP BY CUBE(col1,col,-----)
+
+ ROLLUP :- 
+ ----------------
+
+ => ROLLUP displays subtotals for each group and also displays grand total 
+
+ex :- 
+
+          SELECT deptno,job,SUM(sal) as totsal 
+          FROM emp 
+          GROUP BY ROLLUP(deptno,job)
+          ORDER BY deptno ASC 
+
+      	NULL	NULL		29025.00
+	10	CLERK		1300.00
+	10	MANAGER	2450.00
+	10	PRESIDENT	5000.00
+	10	NULL		8750.00
+	20	ANALYST		6000.00
+	20	CLERK		1900.00
+	20	MANAGER	2975.00
+	20	NULL		10875.00
+	30	CLERK		950.00
+	30	MANAGER	2850.00
+	30	SALESMAN	5600.00
+	30	NULL		9400.00     	    	    
+
+
+CUBE :- 
+------------
+
+ => cube displays subtotals for each group by column (deptno & job) and also displays grand total
+
+          SELECT deptno,job,SUM(sal) as totsal 
+          FROM emp 
+          GROUP BY CUBE(deptno,job)
+          ORDER BY deptno ASC ,job ASC 
+ 
+	NULL	NULL		29025.00
+	NULL	ANALYST		6000.00
+	NULL	CLERK		4150.00
+	NULL	MANAGER	8275.00
+	NULL	PRESIDENT	5000.00
+	NULL	SALESMAN	5600.00
+	10	NULL		8750.00
+	10	CLERK		1300.00
+	10	MANAGER	2450.00
+	10	PRESIDENT	5000.00
+	20	NULL		10875.00
+	20	ANALYST		6000.00
+	20	CLERK		1900.00
+	20	MANAGER	2975.00
+	30	NULL		9400.00
+	30	CLERK		950.00
+	30	MANAGER	2850.00
+	30	SALESMAN	5600.00
+
+16-sep-25 
+
+ GROUPING_ID() :- 
+ --------------------------
+
+ =>  this function accepts group by columns and returns subtotal belongs to which group by column
+
+           Ex :-   GROUPING_ID(deptno,job)
+
+ 	    1   =>   subtotal belongs to 1st group by column i.e. deptno
+	    2   =>   subtotal belongs to 2nd group by column i.e. job
+	    3   =>   grand total
+ 
+         SELECT deptno,job,SUM(sal) as totsal ,
+	       CASE GROUPING_ID(deptno,job)  
+	       WHEN 1 THEN 'Dept Subtotal'
+	       WHEN 2 THEN 'Job subtotal'
+	       WHEN 3 THEN 'Grand Total'
+	       END as subtotal
+          FROM emp 
+          GROUP BY CUBE(deptno,job)
+          ORDER BY deptno ASC ,job ASC 
+
+NULL	NULL		29025.00	Grand Total
+NULL	ANALYST		6000.00	Job subtotal
+NULL	CLERK		4150.00	Job subtotal
+NULL	MANAGER	8275.00	Job subtotal
+NULL	PRESIDENT	5000.00	Job subtotal
+NULL	SALESMAN	5600.00	Job subtotal
+10	NULL		8750.00	Dept Subtotal
+10	CLERK		1300.00	NULL
+10	MANAGER	2450.00	NULL
+10	PRESIDENT	5000.00	NULL
+20	NULL		10875.00	Dept Subtotal
+20	ANALYST		6000.00	NULL
+20	CLERK		1900.00	NULL
+20	MANAGER	2975.00	NULL
+30	NULL		9400.00	Dept Subtotal
+30	CLERK		950.00	NULL
+30	MANAGER	2850.00	NULL
+30	SALESMAN	5600.00	NULL
+
+Question 1 :-
+
+=> display state wise and with in state gender wise population ?
+     display state wise and gender wise subtotals ?
+
+ PERSONS
+ aadharno	  name	dob	gender	addr	city	state
+
+
+  AP	MALE	?
+	FEMALE	?
+		?
+
+ AR	MALE	?
+	FEMALE	?
+		?
+
+	MALE	?
+	FEMALE	?
+
+Question 2 :-
+
+ PERSONS
+ aadharno	  name	dob	gender	addr	city	state
+
+=> display age group wise population ?
+
+        0-20		?
+        21-40	?
+        41-60	?
+        >60		?
+ 
+Range grouping :- 
+-------------------------
+
+=> display no of employees  earning based on  following salary ranges ?
+
+   	0-2000		?
+	2001-4000	?
+	>4000		?
+
+ SELECT case 
+                when sal between 0 and 2000 then '0-2000'
+                when sal between 2001 and 4000 then '2001-4000'
+                when sal>4000 then 'above 4000'
+                end as salrange,COUNT(*) as cnt
+FROM emp
+GROUP BY case 
+                   when sal between 0 and 2000 then '0-2000'
+	   when sal between 2001 and 4000 then '2001-4000'
+	   when sal>4000 then 'above 4000'
+	   end  
+
+Question 3 :- 
+
+ SALES
+ dateid		proodid	custid	qty	amt
+ 2020-01-01	100	10	1	2000
+
+
+1 display  year wise total amount ?
+
+2 display year wise and with in year quarter wise total amount  
+   and also display year wise subtotals ?
+
+summary :- 
+
+ purpose of group by 
+ writing queries using group by
+ where vs having
+ rollup vs cube
+ grouping_id
+
+===========================================================================
+
+ 				JOINS
+				=====
+
+  =>  join is an operation performed to display data from two or more tables
+
+  => In DB related data stored in  multiple tables , to gather or to combine
+       data stored in multiple tables we need to join those tables.
+
+ ex :- 
+
+  orders					customers
+  ordid    orddt      deldt     cid			cid	name	addr
+  1000    ?		?     10			10	A	HYD
+  1001		       11			11	B	HYD
+  1002		       12			12	C	HYD
+
+ OUTPUT :- 
+ 
+  ordid	orddt	deldt	cname	addr
+  1000	?	?	A	HYD
+  1001			B	HYD
+  1002			C	HYD
+
+Types of joins :- 
+ --------------------
+
+1  inner join 
+       equi join
+       non equi join
+       self join
+ 2  outer join
+       left join
+       right join
+       full join
+ 3   cross join or cartesian join
+
+17-sep-25
+
+EQUI JOIN :- 
+-------------------
+
+ =>  To perform equi join between the two tables there must be a common field
+       and name of the common field need not to be same.
+
+  => equi join is performed based on common field with same datatype.
+
+   SELECT columns
+   FROM tab1 INNER JOIN tab2 
+   ON  join condition
+
+ join condition :- 
+------------------------
+
+=> based on the given join condition sql server joins the records of two tables
+=> join condition determines which record of 1st table  joined with which record of 2nd table
+
+                table1.commonfield =  table2.commonfield
+
+ =>  this join is called equi join because here join condition is based on "=" operator.
+
+  Ex :- 
+ 
+  EMP					DEPT
+  empno	ename	sal	deptno		deptno	dname		loc
+ 1	A	3000	10		10	ACCOUNTS	NEW YORK
+ 2	B	4000	20		20	RESEARCH	?
+ 3	C	5000	30		30	SALES		?
+ 4	D	3000	20		40	OPERATIONS	?
+ 5	E	2000	NULL
+
+ 
+=> display employee details with dept details ? 
+
+  SELECT  empno,ename,sal,dname,loc
+  FROM emp INNER JOIN dept 
+  ON emp.deptno = dept.deptno
+
+ 1	A	3000	ACCOUNTS	NEW YORK
+ 2	B	4000	RESEARCH	?
+ 3	C	5000	SALES		?
+ 4	D	3000	RESEARCH	?
+ 
+NOTE :- 
+
+ => In join queries prefix column names with table alias  for two reasons 
+
+ 1  to avoid ambiguity
+ 2 for faster execution
+
+   SELECT  e.empno,e.ename,e.sal,
+                   d.deptno,d.dname,d.loc
+  FROM emp as e INNER JOIN dept as d
+  ON e.deptno = d.deptno
+
+=> display employee details with dept details working at NEW YORK loc ?
+
+    SELECT e.ename,e.sal,d.dname,d.loc
+    FROM emp as e INNER JOIN dept as d
+    ON e.deptno = d.deptno                  /*  JOIN CONDITION */
+    WHERE d.loc = 'NEW YORK'         /*   FILTER CONDITION */ 
+
+=> display order details with cust details to be delivered today ?
+
+      SELECT  o.*,c.*
+      FROM orders as o INNER JOIN cust as c 
+      ON o.cid = c.cid
+      WHERE o.deldt = FORMAT(getdate() , 'yyyy-MM-dd')
+
+OUTER JOIN :- 
+ --------------------
+
+  => inner join returns only matching records but cannot return unmatched records
+       to display unmatched records perform outer join.
+
+ ex :-
+
+  EMP					DEPT
+  empno	ename	sal	deptno		deptno	dname		loc
+ 1	A	3000	10		10	ACCOUNTS	NEW YORK
+ 2	B	4000	20		20	RESEARCH	?
+ 3	C	5000	30		30	SALES		?
+ 4	D	3000	20		40	OPERATIONS	?    => unmatched
+ 5	E	2000	NULL => unmatched 
+ 
+=> outer join is 3 types 
+
+ 1 LEFT JOIN
+ 2 RIGHT JOIN
+ 3 FULL JOIN
+
+ LEFT JOIN :- 
+ -------------------
+
+  => left join returns all rows (matched + unmatched) from left side table
+       and matching rows from right side table.
+
+   SELECT e.ename,d.dname
+   FROM emp as e LEFT JOIN dept as d
+   ON e.deptno = d.deptno 
+
+  => above query returns all rows from emp and matching rows from dept
+ 
+   	A	ACCOUNTS
+	B	RESEARCH
+	C	SALES
+	D	RESEARCH	
+	E	NULL  => unmatched from emp 
+
+ RIGHT JOIN :- 
+ ---------------------
+
+ => right join returns all rows (matched + unmatched) from right side table and matching rows
+      from left side table.
+
+   SELECT e.ename,d.dname
+   FROM emp as e RIGHT JOIN dept as d
+   ON e.deptno = d.deptno 
+
+   A	ACCOUNTS
+   B	RESEARCH
+   C	SALES
+   D	RESEARCH
+  NULL	OPERATIONS  => unmatched from dept
+
+  FULL JOIN :- 
+  -------------------
+
+  =>  full join returns all rows (matched + unmatched)  from both tables 
+
+   SELECT e.ename,d.dname
+   FROM emp as e FULL JOIN dept as d
+   ON e.deptno = d.deptno 
+
+  	A	ACCOUNTS
+	B	RESEARCH
+	C	SALES
+	D	RESEARCH
+	E	NULL	   	 =>	unmatched from emp
+	NULL	OPERATIONS 	 => 	unmatched from dept
+
+18-sep-25
+
+ Displaying only unmatched records :- 
+-------------------------------------------------------
+
+ left side table :- 
+------------------------ 
+ 
+ SELECT e.ename,d.dname
+FROM EMP as e LEFT JOIN DEPT as d 
+ON e.DEPTNO = d.DEPTNO 
+WHERE d.dname IS NULL
+ 
+  E	NULL
+
+right side table :- 
+-----------------------
+
+SELECT e.ename,d.dname
+FROM EMP as e RIGHT JOIN DEPT as d 
+ON e.DEPTNO = d.DEPTNO 
+WHERE e.ename IS NULL
+
+  NULL	OPERATIONS
+
+both tables :-
+-----------------
+
+SELECT e.ename,d.dname
+FROM EMP as e FULL JOIN DEPT as d 
+ON e.DEPTNO = d.DEPTNO 
+WHERE d.dname IS NULL
+              OR
+              e.ename IS NULL
+
+ E	NULL
+NULL	OPERATIONS
+
+Ex :- 
+
+ EMP				PROJECTS
+ empno	ename	sal	projid	projid	pname	duration	cost	client
+ 100			1000	1000	AAA	5	600	TATA MOTORS
+ 101			1000	1001	BBB	3	300	KLM Airlines
+ 102			1001	1002	CCC	4	700	DBS Bank
+ 103			NULL
+
+ => display employee details with project details ?
+
+    SELECT e.* , p.*
+    FROM emp as e INNER JOIN projects as p
+    ON e.projid = p.projid
+
+ => display employee details with project details and also 
+      display employees not assigned to any project ?
+ 
+    SELECT e.* , p.*
+    FROM emp as e LEFT JOIN projects as p
+    ON e.projid = p.projid
+
+=>  display project details where no employee assigned to it ?
+
+    SELECT e.* , p.*
+    FROM emp as e RIGHT JOIN projects as p
+    ON e.projid = p.projid
+    WHERE e.empno IS NULL
+
+ joining more than two tables :- 
+--------------------------------------------
+
+=> if no of tables increases no of join conditions also increases
+=> to join N tables N-1 join conditions required
+
+ SELECT columns
+ FROM tab1 INNER / LEFT / RIGHT / FULL  JOIN tab2
+ ON join condition
+                           INNER JOIN tab3
+ ON join condition
+                           INNER JOIN tab4
+ ON join condition
+
+
+   ((tab1 join tab2)  join tab3 )  join tab4
+
+ Ex :- 
+
+ EMP		DEPT		LOCATIONS	COUNTRIES
+ empno		deptno		locid		country_id
+ ename		dname		city		country_name
+ sal		locid		state
+ deptno 				country_id
+
+ => display   ENAME	     DNAME	CITY	STATE	COUNTRY  ?
+
+ SELECT e.ename,
+                d.dname,
+                l.city,l.state,
+                c.country_name 
+FROM emp as e INNER JOIN dept as d
+ON    e.deptno = d.deptno
+                           INNER JOIN locations as l
+ON   d.locid = l.locid
+                          INNER JOIN countries as c
+ON  l.country_id = c.country_id
+
+on e.deptno = d.deptno :-
+---------------------------------
+
+ EMP 				DEPT
+ empno	ename	deptno		deptno	dname		locid
+ 1	A	10		10	ACCTS		1000
+ 2	B	20		20	RESEARCH	2000
+ 3	C	30		30	SALES		3000
+
+output :- (result 1)						
+						locations						
+empno	ename	dname		locid		locid	city	state	country_id
+1	A	ACCTS		1000		1000	dallas	tx	US
+2	B	RESEARCH	2000		2000	hyd	tg	IND
+3	C	SALES		3000		3000	mum	mh	IND
+
+on d.locid = l.locid :-
+----------------------------
+
+output :- 								 
+								COUNTRIES
+empno	ename	dname		city	state	country_id		country_id		country_name
+1	A	ACCTS		dallas	tx	US		US		UNITED STATES OF AMERICA
+2	B	RESEARCH	hyd	tg	IND		IND		INDIA
+3	C	SALES		mum	mh	IND
+
+on l.country_id = c.country_id :-
+---------------------------------------------
+
+ empno	ename	dname		city	state	country_name
+ 1	A	ACCTS		dallas	tx	UNITED STATES OF AMERICA
+ 2	B	RESEARCH	hyd	tg	INDIA
+ 3	C	SALES		mum	mh	INDIA
+
+Non-equi Join :-
+============
+
+ => Non equi join is performed between the tables not sharing a common field
+ 
+     SELECT columns
+     FROM tab1 INNER JOIN  tab2
+     ON join condition
+
+  => here join condition is not based on "=" operator and it is based on  >    <    between operators
+  
+Ex :- 
+
+  EMP				SALGRADE
+  empno	ename	sal		grade	losal	hisal
+  1	A	3000		1	700	1000
+  2	B	1500		2	1001	2000
+  3	C	4000		3	2001	3000
+  4	D	2500		4	3001	4000
+  5	E	5000		5	4001	9999
+
+
+=> display  ENAME	SAL	GRADE ?
+                   -----------------           -------------
+                         EMP                   SALGRADE
+ 
+   SELECT  e.ename,e.sal,s.grade
+   FROM emp as e INNER JOIN salgrade as s
+   ON e.sal BETWEEN  s.losal AND s.hisal 
+
+ 	A	3000	3
+	B	1500	2
+	C	4000	4
+	D	2500	3
+	E	5000	5
+
+ => display grade 3  employee details ? 
+ 
+   SELECT  e.ename,e.sal,s.grade
+   FROM emp as e INNER JOIN salgrade as s
+   ON e.sal BETWEEN  s.losal AND s.hisal 
+   WHERE s.grade = 3 
+
+=> display  ENAME	 DNAME	GRADE   ?
+                  ----------    ------------   -----------
+                   EMP       DEPT        SALGRADE 
+
+    SELECT  e.ename,
+                    d.dname,
+                    s.grade
+    FROM emp as e 
+                INNER JOIN dept as d  ON  e.deptno = d.deptno
+                INNER JOIN salgrade as s ON e.sal BETWEEN s.losal AND s.hisal   
+
+ 
+  EMP					SALGRADE
+  empno	ename	sal	deptno		grade	losal	hisal
+  1	A	3000	10		1	700	1000
+  2	B	1500	20		2	1001	2000
+  3	C	4000	30		3	2001	3000
+  4	D	2500	10		4	3001	4000
+  5	E	5000	20		5	4001	9999
+
+ on e.sal BETWEEN s.losal AND s.hisal :- 
+----------------------------------------------------------
+
+RESULT 1 :-
+----------------					DEPT
+						deptno	dname	loc
+1	A	3000	10	3		10	ACCTS	
+2	B	1500	20	2		20	RESEARCH
+3	C	4000	30	4		30	SALES
+4	D	2500	10	3		40	OPERATIONS
+5	E	5000	20	5
+
+on e.deptno = d.deptno :-
+-----------------------------------
+
+RESULT 2 :-
+
+ 1	A	3000	10	3	ACCTS
+2	B	1500	20	2	RESEARCH
+ 3	C	4000	30	4	SALES
+ 4	D	2500	10	3	ACCTS
+ 5	E	5000	20	5	RESEARCH
+
+SELECT :-
+---------------
+
+A	ACCTS		3
+B	RESEARCH	2
+C	SALES		4
+D	ACCTS		3
+E	RESEARCH	5
+
+ SELF JOIN :- 
+ ------------------
+
+ => joining a table to itself is called self join or recursive join
+ => in self join a record in one table joined with another record of same table
+ => To perform self join  the same table must be declared two times with different alias in FROM clause
+
+                           FROM emp as x INNER JOIN emp as y 
+
+	
+         EMP X				EMP Y
+         empno   ename   mgr			empno  ename  mgr
+         7369     smith      7902			7369     smith    7902
+         7499     allen       7698                                       7499     allen     7698
+         7566     jones      7839                                       7566     jones    7839
+         7698     blake      7839                                       7698     blake    7839
+         7839     king        NULL                                      7839     king      NULL
+         7902     ford	   7566                                       7902     ford       7566
+
+  => display  ENAME    MGRNAME   ? 
+
+        SELECT x.ename,y.ename as manager
+        FROM emp as x INNER JOIN emp as y
+        ON  x.mgr = y.empno
+
+	smith	ford
+	allen	blake
+	jones	king
+	blake	king
+	ford	jones
+
+  => employees reporting to blake ? 
+
+        SELECT x.ename,y.ename as manager
+        FROM emp as x INNER JOIN emp as y
+        ON  x.mgr = y.empno
+       WHERE y.ename='BLAKE' 
+
+ =>  display BLAKE's manager name ?
+
+        SELECT x.ename,y.ename as manager
+        FROM emp as x INNER JOIN emp as y
+        ON  x.mgr = y.empno
+        WHERE x.ename='BLAKE' 
+
+ => display employees earning more than their managers ? 
+
+        SELECT x.ename,x.sal,y.ename as manager,y.sal s mgrsal
+        FROM emp as x INNER JOIN emp as y
+        ON  x.mgr = y.empno
+        WHERE x.sal  > y.sal
+
+ => employees who are senior to their managers ? 
+
+      SELECT x.ename,x.hiredate, y.ename as manager,y.hiredate as mgrhire
+      FROM emp as x INNER JOIN emp as y
+      ON  x.mgr = y.empno
+      WHERE x.hiredate < y.hiredate
+
+ 
+Question :- 
+-------------
+ 
+TEAMS
+ ID	COUNTRY
+ 1	IND
+ 2	AUS
+ 3	ENG
+
+  output :- 
+
+ IND  VS  AUS
+ IND  VS  ENG
+ AUS  VS ENG
+		
+ TEAMS A				TEAMS B
+ ID	COUNTRY		ID 	COUNTRY
+ 1	IND			1	IND
+ 2	AUS			2	AUS
+ 3	ENG			3	ENG
+
+SELECT A.COUNTRY + '  VS  ' + B.COUNTRY
+FROM TEAMS AS A  INNER JOIN TEAMS AS B
+ON     A.ID < B.ID
+ 
+
+IND	AUS
+IND	ENG
+AUS	ENG
+
+20-sep-25 
+
+ cross / cartesian join :- 
+ -------------------------------
+
+ => cross join returns cross product or cartesian product of two tables 
+ 
+     A  = 1,2
+     B  = 3,4
+
+  AXB  =  (1,3) (1,4) (2,3) (2,4) 
+
+=> if cross join performed between two tables then all records of 1st table joined with 
+     all records of 2nd table.
+
+ => For cross join ,  join condition not required
+
+   SELECT columns
+   FROM tab1 CROSS JOIN tab2
+  
+Ex 1 :- 
+
+   SELECT e.ename,d.dname
+   FROM emp as e CROSS JOIN dept as d 
+
+Ex 2 :- 
+
+ vehicle					gst
+  name    model    variant  cost			rno	gst
+  dzire                   vxi        800000		1	28
+  dzire                   lxi         900000		2	18
+  dzire                   zxi        100000
+
+ SELECT v.name,v.model,v.variant,g.gst
+               v.cost as base_price ,
+               v.cost  +  (v.cost*g.gst/100) as after_gst 
+ FROM vehicle as v CROSS JOIN gst as g
+
+ name	model	variant	gst	base_price	after_gst
+ dzire		vxi	28	800000		1024000
+ dzire		vxi	18	800000		 944000	
+
+Ex 3 :- 
+
+  T1			T2
+  name	price		name	price
+  burger	120		thumsup	40
+  pizza	150		juice	60
+
+ 
+ output :- 
+
+  burger + thumsup	160
+  burger + juice	180
+  pizza + thumsup	190
+  pizza + juice	210
+
+  SELECT  t1.name +  '  +  '  + t2.name as name ,
+                  t1.price + t2.price as total
+  FROM t1 CROSS JOIN t2 
+
+ GROUP BY & JOIN :- 
+ =================
+
+ SELECT columns
+ FROM tab1 INNER JOIN  tab2
+ ON <join condition>
+ [WHERE cond]
+ GROUP BY col1,col2,---
+ [HAVING cond] 
+ [ORDER BY col ASC/DESC,----]
+
+Ex 1  :- 
+
+ =>  display  dept wise total sal ?  display dept names ? 
+
+SELECT d.dname,SUM(e.sal) as totsal
+FROM emp as e INNER JOIN dept as d
+ON e.deptno = d.deptno
+GROUP BY d.dname
+
+FROM :-
+-----------
+
+  EMP					DEPT
+  empno	ename	sal	deptno		deptno	dname		loc
+ 1	A	3000	10		10	ACCOUNTS	NEW YORK
+ 2	B	4000	20		20	RESEARCH	?
+ 3	C	5000	30		30	SALES		?
+ 4	D	3000	20		40	OPERATIONS	?  
+ 5	E	2000	10
+
+ON e.deptno = d.deptno :- 
+-------------------------------------
+
+1	A	3000	10	10	ACCOUNTS
+2	B	4000	20	20	RESEARCH
+3	C	5000	30	30	SALES
+ 4	D	3000	20	20	RESEARCH
+5	E	2000	10	10	ACCOUNTS
+
+GROUP BY d.dname :- 
+-------------------------------
+
+ ACCOUNTS	1	A	3000
+		5	E	2000
+
+ RESEARCH	2	B	4000
+		4	D	3000
+
+ SALES		3	C	5000
+
+
+SELECT d.dname,SUM(e.sal) as totsal :- 
+---------------------------------------------------------
+
+  ACCOUNTS	5000
+  RESEARCH	7000
+  SALES		5000
+
+ =>  display grade wise no of employees ? 
+
+      SELECT  s.grade,COUNT(e.ename) as cnt
+      FROM emp as e INNER JOIN salgrade as s
+      ON e.sal BETWEEN s.losal AND s.hisal
+      GROUP  BY s.grade
+
+ =>  display no of employees working under each manager ? 
+
+ SELECT y.ename as mgr,COUNT(x.ename) as cnt
+FROM emp as x INNER JOIN emp as y
+ON x.mgr = y.empno 
+GROUP BY y.ename
+ 
+ => 
+
+  SALES
+  dateid		prodid	custid	qty	amt
+  2025-09-20	100	10	1	2000
+
+  PRODUCTS
+  prodid	pname	price	category		brand
+  100	AAA	2000	ELECTRONICS	SAMSUNG
+ 
+  CUSTOMERS
+   custid	name	addr	country
+   10	K	HYD	IND
+
+ => display year wise total amount ?
+ => display category wise total amount ?
+ => display country wise total amount ?
+ => display year , country wise,category wise total amount ?
+
+1 SELECT  DATEPART(yy,dateid) as year,SUM(amount) as total
+   FROM sales
+   GROUP BY DATEPART(yy,dateid)
+ 
+
+2   SELECT  p.category , SUM(s.amt) as total
+     FROM sales as s INNER JOIN products as p
+     ON s.prodid = p.prodid
+     GROUP BY p.category
+
+ 22-sep-25 
+
+SET operators :- 
+=============
+
+ UNION
+ UNION ALL
+ INTERSECT
+ EXCEPT
+
+  A = 1,2,3,4
+  B =1,2,5,6
+
+ A UNION B	=>	1,2,3,4,5,6
+ A UNION ALL B	=>	1,2,3,4,1,2,5,6
+ A INTERSECT B	=>	1,2
+ A EXCEPT B	=>	3,4
+ B EXCEPT A	=>	5,6
+
+ => In SQL  , set operations performed between the records return by two queries 
+  
+       SELECT statement 1 
+       UNION / UNION ALL / INTERSECT / EXCEPT
+       SELECT statement 2 
+
+ Rules :- 
+ ----------
+
+   1  no of columns return by both queries must be same
+   2  corresponding columns datatype must be same
+
+UNION :- 
+-------------
+
+ => combines rows return by two queries
+ => duplicates are eliminated
+ => result is sorted 
+
+Query 1 :- 
+--------------
+
+ SELECT job FROM emp WHERE deptno = 20 
+
+CLERK
+MANAGER
+ANALYST
+CLERK
+ANALYST
+
+Query 2 :- 
+--------------
+
+SELECT job FROM emp WHERE deptno = 30
+
+SALESMAN
+SALESMAN
+SALESMAN
+MANAGER
+SALESMAN
+CLERK
+
+Ex  1  :- 
+
+SELECT job FROM emp WHERE deptno = 20 
+UNION
+SELECT job FROM emp WHERE deptno = 30 
+
+ANALYST
+CLERK
+MANAGER
+SALESMAN
+ 
+Ex 2 :- 
+
+SELECT job,sal FROM emp WHERE deptno = 20 
+UNION
+SELECT job,sal FROM emp WHERE deptno = 30 
+
+ANALYST		3000.00
+CLERK		800.00
+CLERK		950.00
+CLERK		1100.00
+MANAGER	2850.00
+MANAGER	2975.00
+SALESMAN	1250.00
+SALESMAN	1500.00
+SALESMAN	1600.00
+
+UNION VS JOIN :-
+------------------------
+
+  	UNION				JOIN 
+
+ 1	combines rows			combines columns 
+
+ 2	horizontal merge			vertical merge
+
+ 3	performed between			performed between two tables 
+                 two queries
+
+Ex 1 :- 
+ 
+T1	T2
+F1	F1
+1	10
+2	20
+3	30
+
+T1 UNION T2 :- 			T1 JOIN T2 :- 
+---------------------			-------------------
+
+1				1	10
+2				2	20
+3				3	30
+10
+20 
+30
+
+Ex 2 :- 
+
+  EMP_US
+  eno	ename	sal	dno
+  100			10
+  101			20
+ 						DEPT
+ EMP_IND					dno	dname	loc
+ eno	ename	sal	dno			10	HR
+ 200			10			20	IT
+ 201			30			30	SALES
+
+ => total employees  ? 
+
+  SELECT * FROM EMP_US
+  UNION
+  SELECT * FROM EMP_IND
+
+=> employees working at US loc with dept details ? 
+ 
+    SELECT e.* , d.*
+    FROM EMP_US AS e INNER JOIN DEPT AS d
+    ON e.dno = d.dno
+
+=> total employees  with dept details ? 
+
+    SELECT e.* , d.*
+    FROM EMP_US AS e INNER JOIN DEPT AS d
+    ON e.dno = d.dno
+    UNION
+    SELECT e.* , d.*
+    FROM EMP_IND AS e INNER JOIN DEPT AS d
+    ON e.dno = d.dno
+
+ UNION ALL :- 
+--------------------
+
+ => combines rows return by two queries
+ => duplicates are not eliminated
+ => result is not sorted 
+
+  SELECT job FROM emp WHERE deptno = 20 
+  UNION ALL
+  SELECT job FROM emp WHERE deptno = 30 
+
+CLERK
+MANAGER
+ANALYST
+CLERK
+ANALYST
+SALESMAN
+SALESMAN
+SALESMAN
+MANAGER
+SALESMAN
+CLERK
+
+UNION vs UNION ALL :- 
+-------------------------------
+
+	UNION				UNION ALL
+
+ 1	eliminates duplicates		doesn't eliminate duplicates
+
+ 2	sorts result			doesn't sort result
+
+ 3	slower				faster
+
+INTERSECT :- 
+---------------------
+
+=> returns common values from the output of two select stmts 
+
+  SELECT job FROM emp WHERE deptno = 20 
+  INTERSECT
+  SELECT job FROM emp WHERE deptno = 30 
+
+  CLERK
+  MANAGER
+
+ EXCEPT :- 
+ ---------------
+
+ => returns values from 1st query output and not present in 2nd query output 
+
+   SELECT job FROM emp WHERE deptno = 20 
+   EXCEPT
+   SELECT job FROM emp WHERE deptno = 30 
+
+   ANALYST
+
+   SELECT job FROM emp WHERE deptno = 30 
+   EXCEPT
+   SELECT job FROM emp WHERE deptno = 20 
+
+   SALESMAN
+
+ Question 1  :- 
+
+  T1		T2
+  F1		F1
+ 1		1
+ 2		2
+ 3		3
+ 10		40
+ 20		50	
+ 30		60
+
+write the output for the following operations   ?
+
+ 1  equi join
+ 2  left join
+ 3  right join
+ 4  full join
+ 5  union
+ 6  union all
+ 7  intersect
+ 6   except
+
+ Question 2 :- 
+
+ T1		T2
+ F1		F1
+ 1		1
+ 2		2
+ 1		1
+ 2		2 
+ NULL		NULL
+ NULL		NULL
+
+=> find no of rows return by following operations ? 
+
+  1	EQUI JOIN	=>	8
+  2	LEFT JOIN	=>	10
+  3	RIGHT JOIN	=>	10
+  4	FULL JOIN	=>	12
+
+  SUB-QUERIES / NESTED QUERIES :- 
+ -------------------------------------------------------
+
+ =>  a query in another query is called sub-query or nested query
+ => one query is called inner  / child / sub-query
+ => other query is called outer / parent / main query
+ => first sql server executes inner query then it executes outer query
+ => output of inner query is input to outer query
+ => use sub-query when where condition based on unknown value
