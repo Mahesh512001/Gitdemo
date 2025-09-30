@@ -85,19 +85,20 @@ article::first-letter{
 }
 section img{
 	
-	width:150px
+	width:200px;
+	border-radius:3px;
 }
 
 main{
 	color:#FFFF00;
 	  display: grid;
   grid-template-columns:auto auto auto auto auto auto;
+
  
  
 }
 main > section {
-  padding: 10px;
-  text-align: center;
+  
 }
 
 

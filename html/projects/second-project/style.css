@@ -1,0 +1,112 @@
+*{
+
+	border:none;
+	margin:0;
+border-radius:4px;	
+	
+}
+
+/* Custom checkbox look */
+
+.checkbox input{
+	 color:red;
+}
+.container{
+	width:60%;
+	background-image:url(dummy.avif);
+   
+	padding:20px;
+	margin:auto;
+}
+
+.checkbox{
+	padding:20px;
+	display:flex;
+	width:220%;
+	position:relative;
+	right:190%;
+	top:50px;
+}
+.checkbox input{
+	margin-right:20px;
+}
+
+.checkbox div{
+	margin-right:20px;
+}
+.dob input{
+	 box-shadow:0 0 3px grey;
+	width:70%;
+	height:35px;
+}
+.dob label{
+	font-size:60%;
+	position:absolute;
+	bottom:80%;
+	left:58%;
+}
+.Input-section input{
+	 box-shadow:0 0 3px grey;
+	width:80%;
+	height:35px;
+	padding-left:30px;
+	
+}
+.btn{
+	width:100px;
+	padding:8px;
+	text-align:center;
+	background:#fca903;
+	color:white;
+	font-weight:bold;
+	position:relative;
+	top:80%;
+}
+.Input-section select{
+		 box-shadow:0 0 3px grey;
+
+	width:87%;
+	height:35px;
+	padding-left:30px;
+	
+}
+
+.all select {
+		 box-shadow:0 0 3px grey;
+
+	width:67%;
+	height:35px;
+	
+}
+
+
+.heading{
+	text-align:center;
+	background:white;
+	border-radius:  5px 5px 0 0;
+}
+.header{
+	 margin-bottom:6px;
+	height:50px;
+	background:white;
+}
+form{
+	border-radius:   0 0 5px 5px;
+	background:white;
+	padding:30px;
+	display:grid;
+	grid-template-columns:60% 35%;
+	gap:30px;
+	margin:0;
+}
+.content{
+	width:96%;
+	margin:auto;
+}
+.footer{
+	height:80px;
+	font-weight:bold;
+	text-align:center;
+	background:white;
+	margin-top:20px  ;
+}
