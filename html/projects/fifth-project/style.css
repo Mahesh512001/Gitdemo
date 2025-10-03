@@ -1,0 +1,52 @@
+*{
+margin:0;
+}
+body{
+background:#f0ebee;}
+
+.navbar{
+	height:60px;
+background:white;}
+
+.card{
+	width:30%;
+	background:#fc7303;
+	box-shadow:0 0 2px white;
+	border-radius:5px;
+	
+}
+.content{
+	padding:30px;
+	margin:auto;
+	font-family:sans-serif;
+	text-align:justify;
+}
+.heading{
+	padding:30px;
+	font-size:1.5rem;
+	color:white;
+	  font-family: Impact, Haettenschweiler, sans-serif;
+}
+.icons{
+position:relative;
+left:20%;
+	
+}
+.icons img{
+width:20%;
+position:relative;
+
+
+}
+
+.icons div{
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	background:blue;
+	opacity:0.1;
+	position:absolute;
+	
+
+	
+}

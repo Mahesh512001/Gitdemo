@@ -1,0 +1,173 @@
+*{
+margin:0;
+
+}
+
+.content{
+	padding:10px;
+	margin:auto;
+	text-align:justify;
+}
+
+form div:last-child{
+	padding:20px;
+	& a {
+		text-decoration:none;
+		color:black;
+	}
+	
+}
+
+.nav{
+	box-shadow:0 0 2px black;
+	background:#d4cfcd;
+	text-align:center;
+	padding: 15px;
+
+}
+
+.check{
+	position:absolute;
+	right:12%;
+}
+.size{
+	width:60%;
+}
+	
+
+.log-in input
+  {
+width:50%;
+border:none;
+border-bottom:1px solid grey;
+padding:10px;
+margin:20px;
+outline:none;
+}
+
+
+.icons{
+	text-align:center;
+	padding:10px;
+}
+.icons img{
+	width:30px;
+	position:relative;
+	top:8px;
+	left:21px;
+}
+.box{
+	
+	margin:auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	width:70%;
+	box-shadow:0 0 3px black;
+}
+
+.container{
+	display:flex;
+
+}
+.user-details{
+	padding:20px;
+	width:60%;
+	
+	box-shadow:0 0 10px black;
+	
+}
+.sidebar{
+	box-shadow:0 0 10px black;
+	width:30%;
+	margin-left:3%;
+}
+.btn2{
+	width:60%;
+	font-family:arial;
+    font-weight:550;
+	padding:10px;	
+	position:relative;
+	left:20%;
+	margin:20px;
+	border:none;
+	box-shadow:0 0 2px black;
+	border-radius:4px;
+	background:#c95b16;
+	color:white;
+}
+.btn{
+	width:40%;
+	font-family:arial;
+font-weight:550;
+	padding:10px;
+	border:none;
+	box-shadow:0 0 2px black;
+	border-radius:4px;
+	background:#c95b16;
+	color:white;
+}
+
+input[type="file"]::file-selector-button {
+	border-radius:30px;
+	background:#649cf5;
+	padding:5px;
+	border:none;
+	box-shadow:0 0 2px black;
+	color:white;
+	margin:6%;
+}
+
+.detail-2 img{
+	width:20px;	
+	position:relative;
+	top:5px;
+}
+
+
+.detail-2 span{
+color:green;}
+
+.upload div{
+color:blue;
+width:50%;
+position:relative;
+
+}
+.inp-box{
+	width: 20%;
+	padding:10px;
+	margin:10px;
+}
+.detail-1 span{
+	color:red;
+}
+.detail-1 label{
+	width:150px;
+	display:inline-block;
+	text-align:end;
+}
+
+.detail-2 div{
+		width:50%;
+		display:flex;
+		justify-content:center;
+		margin:auto;
+		padding:0.7%;
+}
+.detail-2 input{
+	
+	margin:0 20px ;
+	display:inline-block;
+}
+hr{
+width:48%;
+height:1px;
+}
+.or{
+	display:flex;
+	margin:10px;
+}
+.or div{
+	position:relative;
+bottom:17px;
+margin:10px;}

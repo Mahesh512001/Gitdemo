@@ -76,11 +76,11 @@ Ex :-
  101             KLM      3 years      300    KLM Airlines 
 
  emp
- empid	ename	job	sal           projid (fk)
- 1	A	SE	40k	100
- 2	B	SSE	80k	101
- 3	C	TL	100k	100
- 4	D	PM	120k	101
+ empid	ename		job		sal    projid (fk)
+ 1		A			SE		40k		100
+ 2		B			SSE		80k		101
+ 3		C			TL		100k	100
+ 4		D			PM		120k	101
 
 RDBMS features :- 
 ------------------------
